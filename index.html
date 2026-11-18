@@ -31,18 +31,20 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- Google Fonts: Playfair Display (Títulos) e Inter (Textos) -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
     
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        gold: '#D4AF37',
-                        goldDark: '#B5952F',
-                        dark: '#0a0a0a',
-                        darker: '#050505',
-                        darkGray: '#141414'
+                        petrol: '#1F3E46',
+                        petrolDark: '#132A31',
+                        petrolDeep: '#0D1E23',
+                        petrolLight: '#2E5863',
+                        petrolTint: '#EEF4F6',
+                        silver: '#94A3B8',
+                        ice: '#F8FAFC'
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
@@ -54,8 +56,8 @@
     </script>
     
     <style>
-        body { background-color: #050505; color: #f3f4f6; }
-        .text-gradient { background: linear-gradient(to right, #D4AF37, #FFF5D1, #D4AF37); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        body { background-color: #FFFFFF; color: #1E293B; }
+        .text-gradient-light { background: linear-gradient(to right, #FFFFFF, #CBD5E1, #E2E8F0); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         .faq-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; }
         .faq-icon { transition: transform 0.3s ease-out; }
         html { scroll-behavior: smooth; }
@@ -87,238 +89,273 @@
             transform: translateY(-50%);
             border-width: 6px 0 6px 6px;
             border-style: solid;
-            border-color: transparent transparent transparent #ffffff;
+            border-color: transparent transparent transparent #132A31;
         }
 
         /* Estilização de campos do formulário */
-        .input-premium {
-            background-color: #0a0a0a;
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            color: #fff;
-            transition: all 0.3s ease;
+        .input-clean {
+            background-color: #F8FAFC;
+            border: 1px solid #CBD5E1;
+            color: #0F172A;
+            transition: all 0.25s ease;
         }
-        .input-premium:focus {
+        .input-clean::placeholder {
+            color: #94A3B8;
+        }
+        .input-clean:focus {
             outline: none;
-            border-color: #D4AF37;
-            box-shadow: 0 0 12px rgba(212, 175, 55, 0.2);
+            background-color: #FFFFFF;
+            border-color: #1F3E46;
+            box-shadow: 0 0 0 3px rgba(31, 62, 70, 0.14);
         }
 
         /* Scrollbar elegante para os modais jurídicos */
         .modal-scroll::-webkit-scrollbar { width: 6px; }
-        .modal-scroll::-webkit-scrollbar-track { background: #0a0a0a; }
-        .modal-scroll::-webkit-scrollbar-thumb { background: #333; border-radius: 3px; }
-        .modal-scroll::-webkit-scrollbar-thumb:hover { background: #D4AF37; }
+        .modal-scroll::-webkit-scrollbar-track { background: #F1F5F9; }
+        .modal-scroll::-webkit-scrollbar-thumb { background: #94A3B8; border-radius: 3px; }
+        .modal-scroll::-webkit-scrollbar-thumb:hover { background: #1F3E46; }
     </style>
 </head>
-<body class="antialiased selection:bg-gold selection:text-darker">
+<body class="antialiased selection:bg-petrol selection:text-white">
 
-    <!-- Header Inteligente -->
-    <header class="fixed w-full top-0 z-40 flex flex-col transition-all duration-300" id="main-header">
-        <div class="bg-gold text-darker text-center py-1.5 px-4 text-xs font-bold tracking-wider uppercase flex justify-center items-center gap-4 shadow-md">
-            <span><i class="fas fa-map-marker-alt"></i> Atendimento Nacional — Online e Presencial (São Paulo/SP)</span>
-            <span class="hidden sm:inline">|</span>
-            <span class="hidden sm:inline"><i class="fas fa-gavel"></i> Especialistas em Tutelas de Urgência</span>
+    <!-- Header Institucional -->
+    <header class="fixed w-full top-0 z-40 flex flex-col transition-all duration-300 shadow-sm" id="main-header">
+        <!-- Faixa Superior -->
+        <div class="bg-petrolDark text-slate-100 text-center py-1.5 px-4 text-[11px] sm:text-xs font-medium tracking-wider uppercase flex justify-center items-center gap-4">
+            <span><i class="fas fa-map-marker-alt text-slate-300 mr-1"></i> Atendimento Nacional — Online e Presencial (São Paulo/SP)</span>
+            <span class="hidden sm:inline text-slate-500">|</span>
+            <span class="hidden sm:inline"><i class="fas fa-gavel text-slate-300 mr-1"></i> Especialistas em Tutelas de Urgência</span>
         </div>
         
-        <div class="bg-darker/95 backdrop-blur-md border-b border-gray-800/60 w-full transition-all duration-300 py-4" id="nav-container">
+        <!-- Barra de Navegação Clara -->
+        <div class="bg-white/95 backdrop-blur-md border-b border-slate-200 w-full transition-all duration-300 py-3.5" id="nav-container">
             <div class="container mx-auto px-6 flex justify-between items-center">
-                <a href="#inicio" class="flex items-center gap-3.5 group">
-                    <i class="fas fa-balance-scale text-gold text-2xl group-hover:scale-105 transition-transform"></i>
+                <!-- Logo com Brasão Oficial -->
+                <a href="#inicio" class="flex items-center gap-3 group">
+                    <img src="logolosangojsescritorio.png" alt="Brasão Judson Sousa Advocacia" class="h-11 w-11 sm:h-12 sm:w-12 object-contain transition-transform duration-300 group-hover:scale-105">
                     <div>
-                        <span class="font-serif font-bold text-lg tracking-widest text-white block leading-none">JUDSON SOUSA</span>
-                        <span class="text-[9px] text-gold tracking-[0.22em] uppercase block mt-1">Advocacia Especializada</span>
+                        <span class="font-serif font-bold text-base sm:text-lg tracking-widest text-petrolDark block leading-none">JUDSON SOUSA</span>
+                        <span class="text-[9px] sm:text-[10px] text-slate-500 font-semibold tracking-[0.18em] uppercase block mt-1">Sociedade Individual de Advocacia</span>
                     </div>
                 </a>
-                <nav class="hidden md:flex gap-8">
-                    <a href="#inicio" class="text-sm font-medium text-gray-300 hover:text-gold transition-colors">Início</a>
-                    <a href="#atuacao" class="text-sm font-medium text-gray-300 hover:text-gold transition-colors">Áreas de Atuação</a>
-                    <a href="#sobre" class="text-sm font-medium text-gray-300 hover:text-gold transition-colors">A Banca</a>
-                    <a href="#faq" class="text-sm font-medium text-gray-300 hover:text-gold transition-colors">Dúvidas</a>
-                    <a href="#contato" class="text-sm font-medium text-gray-300 hover:text-gold transition-colors">Agendamento</a>
+
+                <!-- Menu Desktop -->
+                <nav class="hidden lg:flex gap-8">
+                    <a href="#inicio" class="text-sm font-medium text-slate-700 hover:text-petrol transition-colors">Início</a>
+                    <a href="#atuacao" class="text-sm font-medium text-slate-700 hover:text-petrol transition-colors">Áreas de Atuação</a>
+                    <a href="#sobre" class="text-sm font-medium text-slate-700 hover:text-petrol transition-colors">A Banca</a>
+                    <a href="#faq" class="text-sm font-medium text-slate-700 hover:text-petrol transition-colors">Dúvidas</a>
+                    <a href="#contato" class="text-sm font-medium text-slate-700 hover:text-petrol transition-colors">Agendamento</a>
                 </nav>
-                <a href="https://wa.me/5511970414575?text=Ol%C3%A1%2C%20Dr.%20Judson!%20Acessei%20o%20site%20do%20escrit%C3%B3rio%20e%20gostaria%20de%20solicitar%20orienta%C3%A7%C3%A3o%20jur%C3%ADdica." target="_blank" class="bg-transparent border border-gold hover:bg-gold text-gold hover:text-darker px-5 py-2.5 rounded font-semibold text-sm transition-all duration-300 flex items-center gap-2">
-                    <i class="fab fa-whatsapp text-lg"></i> Atendimento Direto
+
+                <!-- Ações Direita (WhatsApp + Botão Mobile) -->
+                <div class="flex items-center gap-3">
+                    <a href="https://wa.me/5511970414575?text=Ol%C3%A1%2C%20Dr.%20Judson!%20Acessei%20o%20site%20do%20escrit%C3%B3rio%20e%20gostaria%20de%20solicitar%20orienta%C3%A7%C3%A3o%20jur%C3%ADdica." target="_blank" onclick="rastrearContato('header_whatsapp')" class="hidden sm:flex bg-petrol hover:bg-petrolDark text-white px-5 py-2.5 rounded-lg font-semibold text-sm transition-all duration-300 items-center gap-2 shadow-sm">
+                        <i class="fab fa-whatsapp text-lg"></i> Atendimento Direto
+                    </a>
+                    
+                    <button type="button" id="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Abrir menu de navegação" aria-expanded="false" class="lg:hidden text-petrolDark hover:text-petrol p-2 rounded-lg border border-slate-200 focus:outline-none">
+                        <i class="fas fa-bars text-xl" id="mobile-menu-icon"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Menu Mobile Retrátil -->
+            <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-slate-200 mt-3 px-6 pt-4 pb-5 space-y-3 shadow-lg">
+                <a href="#inicio" onclick="closeMobileMenu()" class="block py-2 text-sm font-semibold text-slate-700 hover:text-petrol border-b border-slate-100">Início</a>
+                <a href="#atuacao" onclick="closeMobileMenu()" class="block py-2 text-sm font-semibold text-slate-700 hover:text-petrol border-b border-slate-100">Áreas de Atuação</a>
+                <a href="#sobre" onclick="closeMobileMenu()" class="block py-2 text-sm font-semibold text-slate-700 hover:text-petrol border-b border-slate-100">A Banca</a>
+                <a href="#faq" onclick="closeMobileMenu()" class="block py-2 text-sm font-semibold text-slate-700 hover:text-petrol border-b border-slate-100">Dúvidas Frequentes</a>
+                <a href="#contato" onclick="closeMobileMenu()" class="block py-2 text-sm font-semibold text-slate-700 hover:text-petrol">Agendamento</a>
+                <a href="https://wa.me/5511970414575?text=Ol%C3%A1%2C%20Dr.%20Judson!%20Acessei%20o%20site%20do%20escrit%C3%B3rio%20e%20gostaria%20de%20solicitar%20orienta%C3%A7%C3%A3o%20jur%C3%ADdica." target="_blank" onclick="rastrearContato('mobile_menu_whatsapp'); closeMobileMenu();" class="mt-3 w-full bg-petrol hover:bg-petrolDark text-white py-3 px-4 rounded-lg font-semibold text-sm flex items-center justify-center gap-2">
+                    <i class="fab fa-whatsapp text-lg"></i> Falar no WhatsApp
                 </a>
             </div>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section id="inicio" class="relative pt-40 pb-16 lg:pt-52 lg:pb-24 overflow-hidden bg-darker">
+    <!-- Hero Section (Azul Petróleo Institucional) -->
+    <section id="inicio" class="relative pt-36 pb-16 lg:pt-48 lg:pb-24 overflow-hidden bg-gradient-to-br from-petrolDeep via-petrolDark to-petrol text-white">
         <div class="absolute top-0 left-0 w-full h-full overflow-hidden z-0 pointer-events-none">
-            <div class="absolute -top-[20%] -right-[10%] w-[50%] h-[50%] rounded-full bg-gold/5 blur-[120px]"></div>
+            <div class="absolute -top-[20%] -right-[10%] w-[50%] h-[50%] rounded-full bg-white/5 blur-[120px]"></div>
+            <div class="absolute -bottom-[20%] -left-[10%] w-[40%] h-[40%] rounded-full bg-slate-300/5 blur-[100px]"></div>
         </div>
         
         <div class="container mx-auto px-6 relative z-10 grid lg:grid-cols-2 gap-12 items-center">
-            <div class="space-y-8 fade-in-up">
-                <div class="inline-block border border-gold/40 bg-gold/5 rounded-full px-4 py-1.5 mb-2">
-                    <span class="text-gold text-xs font-semibold tracking-widest uppercase">Experiência, Técnica e Combatividade</span>
+            <div class="space-y-7 fade-in-up">
+                <div class="inline-block border border-slate-400/30 bg-white/10 backdrop-blur-sm rounded-full px-4 py-1.5">
+                    <span class="text-slate-100 text-xs font-semibold tracking-widest uppercase">Experiência, Técnica e Combatividade</span>
                 </div>
                 
-                <h1 class="font-serif text-4xl lg:text-6xl font-bold leading-tight text-white">
-                    A sua <span class="text-gradient">saúde e os seus direitos</span> não podem esperar pela burocracia.
+                <h1 class="font-serif text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight text-white">
+                    A sua <span class="text-gradient-light underline decoration-slate-400/50 decoration-2 underline-offset-8">saúde e os seus direitos</span> não podem esperar pela burocracia.
                 </h1>
                 
-                <p class="text-gray-300 text-lg leading-relaxed max-w-xl font-light">
+                <p class="text-slate-200 text-lg leading-relaxed max-w-xl font-light">
                     Atuação jurídica de alta complexidade contra abusos de planos de saúde, negativas de tratamentos e lesões ao consumidor e ao patrimônio. Rigor técnico no momento em que sua família mais precisa.
                 </p>
                 
                 <div class="flex flex-col sm:flex-row gap-4 pt-2">
-                    <a href="https://wa.me/5511970414575?text=Ol%C3%A1%2C%20Dr.%20Judson!%20Acessei%20o%20site%20do%20escrit%C3%B3rio%20e%20gostaria%20de%20solicitar%20a%20an%C3%A1lise%20do%20meu%20caso." target="_blank" class="bg-gold hover:bg-goldDark text-darker px-8 py-4 rounded font-bold text-base transition-all duration-300 flex items-center justify-center gap-3 shadow-[0_0_20px_rgba(212,175,55,0.2)] hover:shadow-[0_0_30px_rgba(212,175,55,0.4)]">
-                        <i class="fab fa-whatsapp text-xl"></i> Falar no WhatsApp Agora
+                    <a href="https://wa.me/5511970414575?text=Ol%C3%A1%2C%20Dr.%20Judson!%20Acessei%20o%20site%20do%20escrit%C3%B3rio%20e%20gostaria%20de%20solicitar%20a%20an%C3%A1lise%20do%20meu%20caso." target="_blank" onclick="rastrearContato('hero_whatsapp')" class="bg-white hover:bg-slate-100 text-petrolDark px-8 py-4 rounded-lg font-bold text-base transition-all duration-300 flex items-center justify-center gap-3 shadow-lg hover:shadow-xl">
+                        <i class="fab fa-whatsapp text-xl text-[#16A34A]"></i> Falar no WhatsApp Agora
                     </a>
-                    <a href="#contato" class="border border-gray-700 hover:border-gold text-gray-300 hover:text-gold px-8 py-4 rounded font-medium text-base transition-all duration-300 flex items-center justify-center gap-2">
+                    <a href="#contato" class="border border-slate-300/40 hover:border-white hover:bg-white/10 text-white px-8 py-4 rounded-lg font-medium text-base transition-all duration-300 flex items-center justify-center gap-2">
                         <i class="far fa-calendar-check"></i> Preencher Triagem / Agendar
                     </a>
                 </div>
             </div>
             
             <div class="relative fade-in-up delay-200">
-                <div class="absolute inset-0 bg-gradient-to-tr from-gold/10 to-transparent rounded-full blur-3xl pointer-events-none"></div>
-                <img src="https://i.postimg.cc/GpHnwQgM/Gemini-Generated-Image-xhwf6fxhwf6fxhwf-removebg-preview.png" alt="Símbolo da Justiça e Saúde" class="relative z-10 w-full max-w-md mx-auto drop-shadow-[0_20px_50px_rgba(212,175,55,0.15)]">
+                <div class="absolute inset-0 bg-gradient-to-tr from-white/10 to-transparent rounded-full blur-3xl pointer-events-none"></div>
+                <img src="https://i.postimg.cc/GpHnwQgM/Gemini-Generated-Image-xhwf6fxhwf6fxhwf-removebg-preview.png" alt="Símbolo da Justiça e Saúde" class="relative z-10 w-full max-w-md mx-auto drop-shadow-[0_20px_40px_rgba(0,0,0,0.35)]">
             </div>
         </div>
     </section>
 
-    <!-- Faixa de Autoridade e Métricas Atualizada -->
-    <div class="bg-darkGray border-y border-gray-800/70 py-10 relative z-20">
+    <!-- Faixa de Autoridade e Métricas -->
+    <div class="bg-white border-b border-slate-200 py-10 relative z-20 shadow-sm">
         <div class="container mx-auto px-6">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center divide-x divide-gray-800/70 fade-in-up">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center md:divide-x divide-slate-200 fade-in-up">
                 <div class="px-2">
-                    <h4 class="text-gold font-serif text-3xl lg:text-4xl font-bold mb-1">+25 Anos</h4>
-                    <p class="text-gray-400 text-xs uppercase tracking-wider">De Experiência Jurídica</p>
+                    <h4 class="text-petrol font-serif text-3xl lg:text-4xl font-bold mb-1">+25 Anos</h4>
+                    <p class="text-slate-500 text-xs font-medium uppercase tracking-wider">De Experiência Jurídica</p>
                 </div>
                 <div class="px-2">
-                    <h4 class="text-gold font-serif text-3xl lg:text-4xl font-bold mb-1">+2.000</h4>
-                    <p class="text-gray-400 text-xs uppercase tracking-wider">Casos Atuados</p>
+                    <h4 class="text-petrol font-serif text-3xl lg:text-4xl font-bold mb-1">+2.000</h4>
+                    <p class="text-slate-500 text-xs font-medium uppercase tracking-wider">Casos Atuados</p>
                 </div>
                 <div class="px-2">
-                    <h4 class="text-gold font-serif text-3xl lg:text-4xl font-bold mb-1"><i class="fas fa-globe-americas"></i> Brasil</h4>
-                    <p class="text-gray-400 text-xs uppercase tracking-wider">Atendimento Nacional</p>
+                    <h4 class="text-petrol font-serif text-3xl lg:text-4xl font-bold mb-1"><i class="fas fa-globe-americas mr-1 text-2xl"></i> Brasil</h4>
+                    <p class="text-slate-500 text-xs font-medium uppercase tracking-wider">Atendimento Nacional</p>
                 </div>
                 <div class="px-2">
-                    <h4 class="text-gold font-serif text-3xl lg:text-4xl font-bold mb-1">100%</h4>
-                    <p class="text-gray-400 text-xs uppercase tracking-wider">Online e Presencial</p>
+                    <h4 class="text-petrol font-serif text-3xl lg:text-4xl font-bold mb-1">100%</h4>
+                    <p class="text-slate-500 text-xs font-medium uppercase tracking-wider">Online e Presencial</p>
                 </div>
             </div>
         </div>
     </div>
 
     <!-- Pilares da Banca -->
-    <section class="py-16 bg-dark border-b border-gray-900/50 relative z-20">
+    <section class="py-16 bg-ice border-b border-slate-200 relative z-20">
         <div class="container mx-auto px-6">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
-                <div class="group fade-in-up">
-                    <i class="fas fa-bolt text-3xl text-gold mb-5 transform group-hover:-translate-y-1 transition-transform duration-300"></i>
-                    <h4 class="font-serif font-bold text-xl text-white mb-3">Tutelas de Urgência (Liminares)</h4>
-                    <p class="text-gray-400 text-sm leading-relaxed font-light">Atuação célere e fundamentada para garantir cirurgias, medicamentos de alto custo, home care e terapias essenciais.</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
+                <div class="group bg-white p-8 rounded-xl border border-slate-200/80 shadow-sm hover:shadow-md transition-all fade-in-up">
+                    <div class="w-14 h-14 mx-auto rounded-full bg-petrolTint flex items-center justify-center mb-5 group-hover:bg-petrol transition-colors duration-300">
+                        <i class="fas fa-bolt text-2xl text-petrol group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h4 class="font-serif font-bold text-xl text-petrolDark mb-3">Tutelas de Urgência (Liminares)</h4>
+                    <p class="text-slate-600 text-sm leading-relaxed">Atuação célere e fundamentada para garantir cirurgias, medicamentos de alto custo, home care e terapias essenciais.</p>
                 </div>
-                <div class="group fade-in-up delay-100">
-                    <i class="fas fa-laptop-house text-3xl text-gold mb-5 transform group-hover:-translate-y-1 transition-transform duration-300"></i>
-                    <h4 class="font-serif font-bold text-xl text-white mb-3">Atendimento Online e Presencial</h4>
-                    <p class="text-gray-400 text-sm leading-relaxed font-light">Sede física no Brooklin (São Paulo/SP) aliada a processos 100% digitais para atender clientes em qualquer estado do Brasil.</p>
+                <div class="group bg-white p-8 rounded-xl border border-slate-200/80 shadow-sm hover:shadow-md transition-all fade-in-up delay-100">
+                    <div class="w-14 h-14 mx-auto rounded-full bg-petrolTint flex items-center justify-center mb-5 group-hover:bg-petrol transition-colors duration-300">
+                        <i class="fas fa-laptop-house text-2xl text-petrol group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h4 class="font-serif font-bold text-xl text-petrolDark mb-3">Atendimento Online e Presencial</h4>
+                    <p class="text-slate-600 text-sm leading-relaxed">Sede física no Brooklin (São Paulo/SP) aliada a processos 100% digitais para atender clientes em qualquer estado do Brasil.</p>
                 </div>
-                <div class="group fade-in-up delay-200">
-                    <i class="fas fa-award text-3xl text-gold mb-5 transform group-hover:-translate-y-1 transition-transform duration-300"></i>
-                    <h4 class="font-serif font-bold text-xl text-white mb-3">Banca Especializada</h4>
-                    <p class="text-gray-400 text-sm leading-relaxed font-light">Estudo minucioso de cada demanda nas esferas da Saúde, Consumidor, Imobiliário, Civil, Família e Trabalhista.</p>
+                <div class="group bg-white p-8 rounded-xl border border-slate-200/80 shadow-sm hover:shadow-md transition-all fade-in-up delay-200">
+                    <div class="w-14 h-14 mx-auto rounded-full bg-petrolTint flex items-center justify-center mb-5 group-hover:bg-petrol transition-colors duration-300">
+                        <i class="fas fa-award text-2xl text-petrol group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h4 class="font-serif font-bold text-xl text-petrolDark mb-3">Banca Especializada</h4>
+                    <p class="text-slate-600 text-sm leading-relaxed">Estudo minucioso de cada demanda nas esferas da Saúde, Consumidor, Imobiliário, Civil, Família e Trabalhista.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Áreas de Atuação -->
-    <section id="atuacao" class="py-24 bg-darker overflow-hidden">
+    <section id="atuacao" class="py-24 bg-white overflow-hidden scroll-mt-32">
         <div class="container mx-auto px-6">
-            <div class="text-center mb-16 space-y-4 fade-in-up">
-                <h3 class="text-gold font-semibold tracking-widest uppercase text-xs">Atuação Multidisciplinar</h3>
-                <h2 class="font-serif text-3xl lg:text-5xl font-bold text-white">Áreas de Especialidade</h2>
-                <div class="w-16 h-1 bg-gold/50 mx-auto rounded"></div>
+            <div class="text-center mb-16 space-y-3 fade-in-up">
+                <h3 class="text-petrol font-semibold tracking-widest uppercase text-xs">Atuação Multidisciplinar</h3>
+                <h2 class="font-serif text-3xl lg:text-5xl font-bold text-petrolDark">Áreas de Especialidade</h2>
+                <div class="w-16 h-1 bg-petrol mx-auto rounded"></div>
             </div>
             
-            <div class="flex overflow-x-auto snap-x snap-mandatory hide-scrollbar gap-6 pb-4 md:grid md:grid-cols-2 lg:grid-cols-4 md:overflow-visible md:gap-8 md:pb-0 fade-in-up delay-100">
-                <div class="min-w-[85vw] sm:min-w-[300px] md:min-w-0 snap-center bg-dark p-8 rounded-xl border border-gray-800/60 hover:border-gold/40 transition-all duration-300 group">
-                    <i class="fas fa-heartbeat text-3xl text-gold mb-6 opacity-80 group-hover:opacity-100 transition-opacity"></i>
-                    <h3 class="font-serif text-xl font-bold mb-4 text-white">Direito Médico e da Saúde</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed font-light">Defesa dos direitos de pacientes, responsabilidade civil por erros médicos e fornecimento de medicamentos pelo SUS.</p>
+            <div class="flex overflow-x-auto snap-x snap-mandatory hide-scrollbar gap-6 pb-4 md:grid md:grid-cols-2 lg:grid-cols-4 md:overflow-visible md:gap-7 md:pb-0 fade-in-up delay-100">
+                <div class="min-w-[85vw] sm:min-w-[300px] md:min-w-0 snap-center bg-ice p-8 rounded-xl border border-slate-200 hover:border-petrol hover:bg-white hover:shadow-lg transition-all duration-300 group">
+                    <i class="fas fa-heartbeat text-3xl text-petrol mb-5 group-hover:scale-110 transition-transform inline-block"></i>
+                    <h3 class="font-serif text-xl font-bold mb-3 text-petrolDark">Direito Médico e da Saúde</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Defesa dos direitos de pacientes, responsabilidade civil por erros médicos e fornecimento de medicamentos pelo SUS.</p>
                 </div>
-                <div class="min-w-[85vw] sm:min-w-[300px] md:min-w-0 snap-center bg-dark p-8 rounded-xl border border-gray-800/60 hover:border-gold/40 transition-all duration-300 group">
-                    <i class="fas fa-hospital text-3xl text-gold mb-6 opacity-80 group-hover:opacity-100 transition-opacity"></i>
-                    <h3 class="font-serif text-xl font-bold mb-4 text-white">Planos de Saúde e Hospitais</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed font-light">Liminar contra negativas de cirurgias, próteses, home care, tratamentos oncológicos e revisão de reajustes abusivos.</p>
+                <div class="min-w-[85vw] sm:min-w-[300px] md:min-w-0 snap-center bg-ice p-8 rounded-xl border border-slate-200 hover:border-petrol hover:bg-white hover:shadow-lg transition-all duration-300 group">
+                    <i class="fas fa-hospital text-3xl text-petrol mb-5 group-hover:scale-110 transition-transform inline-block"></i>
+                    <h3 class="font-serif text-xl font-bold mb-3 text-petrolDark">Planos de Saúde e Hospitais</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Liminar contra negativas de cirurgias, próteses, home care, tratamentos oncológicos e revisão de reajustes abusivos.</p>
                 </div>
-                <div class="min-w-[85vw] sm:min-w-[300px] md:min-w-0 snap-center bg-dark p-8 rounded-xl border border-gray-800/60 hover:border-gold/40 transition-all duration-300 group">
-                    <i class="fas fa-puzzle-piece text-3xl text-gold mb-6 opacity-80 group-hover:opacity-100 transition-opacity"></i>
-                    <h3 class="font-serif text-xl font-bold mb-4 text-white">Direito do Autista (TEA)</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed font-light">Garantia judicial de terapias multidisciplinares (método ABA, fonoaudiologia, TO) sem limitação abusiva de sessões.</p>
+                <div class="min-w-[85vw] sm:min-w-[300px] md:min-w-0 snap-center bg-ice p-8 rounded-xl border border-slate-200 hover:border-petrol hover:bg-white hover:shadow-lg transition-all duration-300 group">
+                    <i class="fas fa-puzzle-piece text-3xl text-petrol mb-5 group-hover:scale-110 transition-transform inline-block"></i>
+                    <h3 class="font-serif text-xl font-bold mb-3 text-petrolDark">Direito do Autista (TEA)</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Garantia judicial de terapias multidisciplinares (método ABA, fonoaudiologia, TO) sem limitação abusiva de sessões.</p>
                 </div>
-                <div class="min-w-[85vw] sm:min-w-[300px] md:min-w-0 snap-center bg-dark p-8 rounded-xl border border-gray-800/60 hover:border-gold/40 transition-all duration-300 group">
-                    <i class="fas fa-tooth text-3xl text-gold mb-6 opacity-80 group-hover:opacity-100 transition-opacity"></i>
-                    <h3 class="font-serif text-xl font-bold mb-4 text-white">Direito Odontológico</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed font-light">Ações reparatórias e análise técnica envolvendo falhas em implantes, ortodontia, próteses e harmonização facial.</p>
+                <div class="min-w-[85vw] sm:min-w-[300px] md:min-w-0 snap-center bg-ice p-8 rounded-xl border border-slate-200 hover:border-petrol hover:bg-white hover:shadow-lg transition-all duration-300 group">
+                    <i class="fas fa-tooth text-3xl text-petrol mb-5 group-hover:scale-110 transition-transform inline-block"></i>
+                    <h3 class="font-serif text-xl font-bold mb-3 text-petrolDark">Direito Odontológico</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Ações reparatórias e análise técnica envolvendo falhas em implantes, ortodontia, próteses e harmonização facial.</p>
                 </div>
-                <div class="min-w-[85vw] sm:min-w-[300px] md:min-w-0 snap-center bg-dark p-8 rounded-xl border border-gray-800/60 hover:border-gold/40 transition-all duration-300 group">
-                    <i class="fas fa-city text-3xl text-gold mb-6 opacity-80 group-hover:opacity-100 transition-opacity"></i>
-                    <h3 class="font-serif text-xl font-bold mb-4 text-white">Direito Imobiliário</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed font-light">Segurança jurídica em compra e venda, distratos imobiliários, ações possessórias, locações, usucapião e regularizações.</p>
+                <div class="min-w-[85vw] sm:min-w-[300px] md:min-w-0 snap-center bg-ice p-8 rounded-xl border border-slate-200 hover:border-petrol hover:bg-white hover:shadow-lg transition-all duration-300 group">
+                    <i class="fas fa-city text-3xl text-petrol mb-5 group-hover:scale-110 transition-transform inline-block"></i>
+                    <h3 class="font-serif text-xl font-bold mb-3 text-petrolDark">Direito Imobiliário</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Segurança jurídica em compra e venda, distratos imobiliários, ações possessórias, locações, usucapião e regularizações.</p>
                 </div>
-                <div class="min-w-[85vw] sm:min-w-[300px] md:min-w-0 snap-center bg-dark p-8 rounded-xl border border-gray-800/60 hover:border-gold/40 transition-all duration-300 group">
-                    <i class="fas fa-balance-scale-right text-3xl text-gold mb-6 opacity-80 group-hover:opacity-100 transition-opacity"></i>
-                    <h3 class="font-serif text-xl font-bold mb-4 text-white">Civil e Consumidor</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed font-light">Contencioso cível estratégico, execução de contratos, indenizações por danos morais e materiais e práticas abusivas.</p>
+                <div class="min-w-[85vw] sm:min-w-[300px] md:min-w-0 snap-center bg-ice p-8 rounded-xl border border-slate-200 hover:border-petrol hover:bg-white hover:shadow-lg transition-all duration-300 group">
+                    <i class="fas fa-balance-scale-right text-3xl text-petrol mb-5 group-hover:scale-110 transition-transform inline-block"></i>
+                    <h3 class="font-serif text-xl font-bold mb-3 text-petrolDark">Civil e Consumidor</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Contencioso cível estratégico, execução de contratos, indenizações por danos morais e materiais e práticas abusivas.</p>
                 </div>
-                <div class="min-w-[85vw] sm:min-w-[300px] md:min-w-0 snap-center bg-dark p-8 rounded-xl border border-gray-800/60 hover:border-gold/40 transition-all duration-300 group">
-                    <i class="fas fa-users text-3xl text-gold mb-6 opacity-80 group-hover:opacity-100 transition-opacity"></i>
-                    <h3 class="font-serif text-xl font-bold mb-4 text-white">Família e Sucessões</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed font-light">Condução ética e sigilosa em inventários judiciais e extrajudiciais, partilha de bens, divórcios, guarda e alimentos.</p>
+                <div class="min-w-[85vw] sm:min-w-[300px] md:min-w-0 snap-center bg-ice p-8 rounded-xl border border-slate-200 hover:border-petrol hover:bg-white hover:shadow-lg transition-all duration-300 group">
+                    <i class="fas fa-users text-3xl text-petrol mb-5 group-hover:scale-110 transition-transform inline-block"></i>
+                    <h3 class="font-serif text-xl font-bold mb-3 text-petrolDark">Família e Sucessões</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Condução ética e sigilosa em inventários judiciais e extrajudiciais, partilha de bens, divórcios, guarda e alimentos.</p>
                 </div>
-                <div class="min-w-[85vw] sm:min-w-[300px] md:min-w-0 snap-center bg-dark p-8 rounded-xl border border-gray-800/60 hover:border-gold/40 transition-all duration-300 group">
-                    <i class="fas fa-briefcase text-3xl text-gold mb-6 opacity-80 group-hover:opacity-100 transition-opacity"></i>
-                    <h3 class="font-serif text-xl font-bold mb-4 text-white">Direito Trabalhista</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed font-light">Atuação técnica em reclamações trabalhistas, rescisões indiretas, reconhecimento de vínculo e verbas rescisórias.</p>
+                <div class="min-w-[85vw] sm:min-w-[300px] md:min-w-0 snap-center bg-ice p-8 rounded-xl border border-slate-200 hover:border-petrol hover:bg-white hover:shadow-lg transition-all duration-300 group">
+                    <i class="fas fa-briefcase text-3xl text-petrol mb-5 group-hover:scale-110 transition-transform inline-block"></i>
+                    <h3 class="font-serif text-xl font-bold mb-3 text-petrolDark">Direito Trabalhista</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Atuação técnica em reclamações trabalhistas, rescisões indiretas, reconhecimento de vínculo e verbas rescisórias.</p>
                 </div>
             </div>
-            <div class="flex justify-center mt-6 md:hidden text-gray-500 text-xs items-center gap-2">
+            <div class="flex justify-center mt-6 md:hidden text-slate-500 text-xs items-center gap-2">
                 <i class="fas fa-arrows-alt-h"></i> Arraste para o lado para ver todas as áreas
             </div>
         </div>
     </section>
 
     <!-- Sobre a Banca e o Titular -->
-    <section id="sobre" class="py-24 bg-dark relative overflow-hidden">
-        <div class="absolute right-0 top-0 w-1/3 h-full bg-gold/5 blur-3xl rounded-full pointer-events-none"></div>
+    <section id="sobre" class="py-24 bg-ice border-y border-slate-200 relative overflow-hidden scroll-mt-32">
         <div class="container mx-auto px-6 relative z-10">
             <div class="grid lg:grid-cols-2 gap-16 items-center">
                 <div class="relative max-w-sm mx-auto lg:mx-0 fade-in-up">
-                    <div class="absolute inset-0 border border-gold/50 translate-x-4 translate-y-4 rounded-xl z-0"></div>
-                    <img src="https://i.postimg.cc/d06HxB3C/333680.jpg" loading="lazy" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=400&h=533'" alt="Dr. Judson Clementino de Sousa" class="relative z-10 w-full aspect-[3/4] object-cover object-top rounded-xl shadow-2xl grayscale-[15%]">
+                    <div class="absolute inset-0 border-2 border-petrol/30 translate-x-4 translate-y-4 rounded-xl z-0"></div>
+                    <img src="https://i.postimg.cc/d06HxB3C/333680.jpg" loading="lazy" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=400&h=533'" alt="Dr. Judson Clementino de Sousa" class="relative z-10 w-full aspect-[3/4] object-cover object-top rounded-xl shadow-xl">
                 </div>
                 
                 <div class="space-y-6 fade-in-up delay-100">
-                    <h3 class="text-gold font-semibold tracking-widest uppercase text-xs">O Titular da Banca</h3>
-                    <h2 class="font-serif text-3xl lg:text-5xl font-bold text-white">Dr. Judson Sousa</h2>
-                    <p class="text-lg text-gray-300 border-l-2 border-gold pl-4 font-serif italic">
+                    <h3 class="text-petrol font-semibold tracking-widest uppercase text-xs">O Titular da Banca</h3>
+                    <h2 class="font-serif text-3xl lg:text-5xl font-bold text-petrolDark">Dr. Judson Sousa</h2>
+                    <p class="text-lg text-petrol border-l-4 border-petrol pl-4 font-serif italic font-semibold">
                         Dr. Judson Clementino de Sousa — OAB/SP 162.174
                     </p>
                     
-                    <div class="space-y-4 text-gray-300 leading-relaxed font-light text-justify">
-                        <p>Com mais de 25 anos de experiência e sólida reputação na advocacia, o Dr. Judson Sousa é especialista em <strong>Direito Médico, Hospitalar, Odontológico e da Saúde</strong>, além de possuir destacada atuação em <strong>Defesa do Consumidor, Direito Imobiliário, Civil e Processo Civil</strong>.</p>
+                    <div class="space-y-4 text-slate-700 leading-relaxed text-justify">
+                        <p>Com mais de 25 anos de experiência e sólida reputação na advocacia, o Dr. Judson Sousa é especialista em <strong class="text-petrolDark">Direito Médico, Hospitalar, Odontológico e da Saúde</strong>, além de possuir destacada atuação em <strong class="text-petrolDark">Defesa do Consumidor, Direito Imobiliário, Civil e Processo Civil</strong>.</p>
                         
-                        <p>À frente da <strong>Judson Sousa Sociedade Individual de Advocacia</strong>, coordena uma estrutura jurídica preparada para lidar com demandas de alta complexidade em todo o território nacional. Nosso escritório conta com atuação segmentada para atender também causas específicas de <strong>Direito do Autista (TEA)</strong>, <strong>Direito de Família e Sucessões</strong> e <strong>Direito Trabalhista</strong>, garantindo que cada processo seja conduzido com rigor técnico por profissional dedicado à matéria.</p>
+                        <p>À frente da <strong class="text-petrolDark">Judson Sousa Sociedade Individual de Advocacia</strong>, coordena uma estrutura jurídica preparada para lidar com demandas de alta complexidade em todo o território nacional. Nosso escritório conta com atuação segmentada para atender também causas específicas de <strong class="text-petrolDark">Direito do Autista (TEA)</strong>, <strong class="text-petrolDark">Direito de Família e Sucessões</strong> e <strong class="text-petrolDark">Direito Trabalhista</strong>, garantindo que cada processo seja conduzido com rigor técnico por profissional dedicado à matéria.</p>
 
                         <p>Nosso compromisso é oferecer um atendimento ágil — tanto online quanto presencial em nossa sede em São Paulo —, protegendo a saúde, a dignidade e o patrimônio de nossos clientes.</p>
                         
-                        <ul class="space-y-3 mt-6 text-gray-200 pt-2">
+                        <ul class="space-y-3 mt-6 text-slate-800 pt-2">
                             <li class="flex items-start gap-3">
-                                <i class="fas fa-check text-gold mt-1 text-sm"></i>
+                                <i class="fas fa-check-circle text-petrol mt-1 text-sm"></i>
                                 <span>Especialista em Direito Médico, Hospitalar, Odontológico e da Saúde.</span>
                             </li>
                             <li class="flex items-start gap-3">
-                                <i class="fas fa-check text-gold mt-1 text-sm"></i>
+                                <i class="fas fa-check-circle text-petrol mt-1 text-sm"></i>
                                 <span>Especialista em Defesa do Consumidor, Direito Imobiliário, Civil e Processo Civil.</span>
                             </li>
                             <li class="flex items-start gap-3">
-                                <i class="fas fa-check text-gold mt-1 text-sm"></i>
+                                <i class="fas fa-check-circle text-petrol mt-1 text-sm"></i>
                                 <span>Banca estruturada com atuação dedicada em Direito do Autista (TEA), Família e Trabalhista.</span>
                             </li>
                         </ul>
@@ -329,59 +366,59 @@
     </section>
 
     <!-- FAQ -->
-    <section id="faq" class="py-24 bg-darker">
+    <section id="faq" class="py-24 bg-white scroll-mt-32">
         <div class="container mx-auto px-6 max-w-4xl">
-            <div class="text-center mb-16 space-y-4 fade-in-up">
-                <h3 class="text-gold font-semibold tracking-widest uppercase text-xs">Esclarecimentos Jurídicos</h3>
-                <h2 class="font-serif text-3xl lg:text-5xl font-bold text-white">Dúvidas Frequentes</h2>
-                <div class="w-16 h-1 bg-gold/50 mx-auto rounded"></div>
+            <div class="text-center mb-16 space-y-3 fade-in-up">
+                <h3 class="text-petrol font-semibold tracking-widest uppercase text-xs">Esclarecimentos Jurídicos</h3>
+                <h2 class="font-serif text-3xl lg:text-5xl font-bold text-petrolDark">Dúvidas Frequentes</h2>
+                <div class="w-16 h-1 bg-petrol mx-auto rounded"></div>
             </div>
             
-            <div class="space-y-4 fade-in-up delay-100">
-                <div class="border-b border-gray-800/60 bg-transparent">
+            <div class="space-y-3 fade-in-up delay-100">
+                <div class="border border-slate-200 rounded-xl bg-ice px-6">
                     <button class="w-full py-5 text-left flex justify-between items-center focus:outline-none group" onclick="toggleFaq(this)">
-                        <span class="font-serif font-semibold text-lg text-gray-200 group-hover:text-gold transition-colors pr-4">Como funciona o pedido de liminar contra o plano de saúde?</span>
-                        <span class="text-gold text-2xl font-light faq-icon">+</span>
+                        <span class="font-serif font-semibold text-lg text-petrolDark group-hover:text-petrol transition-colors pr-4">Como funciona o pedido de liminar contra o plano de saúde?</span>
+                        <span class="text-petrol text-2xl font-light faq-icon">+</span>
                     </button>
                     <div class="faq-content">
-                        <div class="pb-6 text-gray-400 text-sm leading-relaxed font-light space-y-3">
-                            <p>Quando há urgência médica (negativa de cirurgia, internação, tratamento oncológico ou medicamento de alto custo), ingressamos com uma ação judicial com pedido de <strong>tutela de urgência (liminar)</strong>. Apresentamos o relatório médico detalhado e a negativa ao juiz para que a obrigação seja analisada logo no início do processo, evitando que a demora cause danos irreparáveis ao paciente.</p>
+                        <div class="pb-6 text-slate-600 text-sm leading-relaxed space-y-3">
+                            <p>Quando há urgência médica (negativa de cirurgia, internação, tratamento oncológico ou medicamento de alto custo), ingressamos com uma ação judicial com pedido de <strong class="text-petrolDark">tutela de urgência (liminar)</strong>. Apresentamos o relatório médico detalhado e a negativa ao juiz para que a obrigação seja analisada logo no início do processo, evitando que a demora cause danos irreparáveis ao paciente.</p>
                         </div>
                     </div>
                 </div>
 
-                <div class="border-b border-gray-800/60 bg-transparent">
+                <div class="border border-slate-200 rounded-xl bg-ice px-6">
                     <button class="w-full py-5 text-left flex justify-between items-center focus:outline-none group" onclick="toggleFaq(this)">
-                        <span class="font-serif font-semibold text-lg text-gray-200 group-hover:text-gold transition-colors pr-4">O plano pode negar ou limitar terapias (ABA) para autistas (TEA)?</span>
-                        <span class="text-gold text-2xl font-light faq-icon">+</span>
+                        <span class="font-serif font-semibold text-lg text-petrolDark group-hover:text-petrol transition-colors pr-4">O plano pode negar ou limitar terapias (ABA) para autistas (TEA)?</span>
+                        <span class="text-petrol text-2xl font-light faq-icon">+</span>
                     </button>
                     <div class="faq-content">
-                        <div class="pb-6 text-gray-400 text-sm leading-relaxed font-light space-y-3">
-                            <p><strong class="text-gray-200 font-medium">Não.</strong> A jurisprudência e as normas regulatórias vedam a limitação de sessões de psicoterapia, fonoaudiologia, terapia ocupacional e método ABA prescritos pelo médico assistente para pacientes com Transtorno do Espectro Autista. Recusas ou reembolsos irrisórios podem ser combatidos judicialmente.</p>
+                        <div class="pb-6 text-slate-600 text-sm leading-relaxed space-y-3">
+                            <p><strong class="text-petrolDark">Não.</strong> A jurisprudência e as normas regulatórias vedam a limitação de sessões de psicoterapia, fonoaudiologia, terapia ocupacional e método ABA prescritos pelo médico assistente para pacientes com Transtorno do Espectro Autista. Recusas ou reembolsos irrisórios podem ser combatidos judicialmente.</p>
                         </div>
                     </div>
                 </div>
 
-                <div class="border-b border-gray-800/60 bg-transparent">
+                <div class="border border-slate-200 rounded-xl bg-ice px-6">
                     <button class="w-full py-5 text-left flex justify-between items-center focus:outline-none group" onclick="toggleFaq(this)">
-                        <span class="font-serif font-semibold text-lg text-gray-200 group-hover:text-gold transition-colors pr-4">Como funciona o atendimento online e presencial do escritório?</span>
-                        <span class="text-gold text-2xl font-light faq-icon">+</span>
+                        <span class="font-serif font-semibold text-lg text-petrolDark group-hover:text-petrol transition-colors pr-4">Como funciona o atendimento online e presencial do escritório?</span>
+                        <span class="text-petrol text-2xl font-light faq-icon">+</span>
                     </button>
                     <div class="faq-content">
-                        <div class="pb-6 text-gray-400 text-sm leading-relaxed font-light space-y-3">
-                            <p>Você escolhe a modalidade mais confortável. Contamos com sede física no Brooklin em São Paulo para atendimento presencial mediante agendamento, e também operamos de forma <strong>100% digital para todo o Brasil</strong>. No atendimento online, reuniões são feitas por vídeo ou WhatsApp e os documentos são assinados eletronicamente pelo celular com total validade jurídica.</p>
+                        <div class="pb-6 text-slate-600 text-sm leading-relaxed space-y-3">
+                            <p>Você escolhe a modalidade mais confortável. Contamos com sede física no Brooklin em São Paulo para atendimento presencial mediante agendamento, e também operamos de forma <strong class="text-petrolDark">100% digital para todo o Brasil</strong>. No atendimento online, reuniões são feitas por vídeo ou WhatsApp e os documentos são assinados eletronicamente pelo celular com total validade jurídica.</p>
                         </div>
                     </div>
                 </div>
 
-                <div class="border-b border-gray-800/60 bg-transparent">
+                <div class="border border-slate-200 rounded-xl bg-ice px-6">
                     <button class="w-full py-5 text-left flex justify-between items-center focus:outline-none group" onclick="toggleFaq(this)">
-                        <span class="font-serif font-semibold text-lg text-gray-200 group-hover:text-gold transition-colors pr-4">O plano de saúde é obrigado a cobrir cirurgia robótica ou próteses importadas?</span>
-                        <span class="text-gold text-2xl font-light faq-icon">+</span>
+                        <span class="font-serif font-semibold text-lg text-petrolDark group-hover:text-petrol transition-colors pr-4">O plano de saúde é obrigado a cobrir cirurgia robótica ou próteses importadas?</span>
+                        <span class="text-petrol text-2xl font-light faq-icon">+</span>
                     </button>
                     <div class="faq-content">
-                        <div class="pb-6 text-gray-400 text-sm leading-relaxed font-light space-y-3">
-                            <p><strong class="text-gray-200 font-medium">Sim, quando houver justificativa médica.</strong> Cabe ao médico que acompanha o paciente — e não ao plano de saúde — definir a técnica cirúrgica e os materiais mais seguros para a cirurgia. Havendo laudo fundamentado, a negativa da operadora configura prática abusiva.</p>
+                        <div class="pb-6 text-slate-600 text-sm leading-relaxed space-y-3">
+                            <p><strong class="text-petrolDark">Sim, quando houver justificativa médica.</strong> Cabe ao médico que acompanha o paciente — e não ao plano de saúde — definir a técnica cirúrgica e os materiais mais seguros para a cirurgia. Havendo laudo fundamentado, a negativa da operadora configura prática abusiva.</p>
                         </div>
                     </div>
                 </div>
@@ -389,36 +426,36 @@
         </div>
     </section>
 
-    <!-- Seção de Agendamento Triplo (WhatsApp + Outlook/Mail + Cópia Direta) -->
-    <section id="contato" class="py-24 bg-dark border-t border-gray-900/50 relative overflow-hidden">
+    <!-- Seção de Agendamento Triplo -->
+    <section id="contato" class="py-24 bg-ice border-t border-slate-200 relative overflow-hidden scroll-mt-32">
         <div class="container mx-auto px-6 relative z-10">
-            <div class="text-center mb-16 space-y-4 fade-in-up">
-                <h3 class="text-gold font-semibold tracking-widest uppercase text-xs">Atendimento Online e Presencial</h3>
-                <h2 class="font-serif text-3xl lg:text-5xl font-bold text-white">Agende uma Análise do Seu Caso</h2>
-                <div class="w-16 h-1 bg-gold/50 mx-auto rounded"></div>
+            <div class="text-center mb-16 space-y-3 fade-in-up">
+                <h3 class="text-petrol font-semibold tracking-widest uppercase text-xs">Atendimento Online e Presencial</h3>
+                <h2 class="font-serif text-3xl lg:text-5xl font-bold text-petrolDark">Agende uma Análise do Seu Caso</h2>
+                <div class="w-16 h-1 bg-petrol mx-auto rounded"></div>
             </div>
 
             <div class="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto fade-in-up delay-100">
                 
-                <!-- Formulário Inteligente 100% Nativo -->
-                <div class="bg-darker p-8 lg:p-10 rounded-xl border border-gray-800/60 shadow-2xl">
-                    <h3 class="text-2xl font-serif text-white mb-2">Ficha de Triagem e Agendamento</h3>
-                    <p class="text-gray-400 text-xs font-light mb-6">Preencha os campos abaixo. O sistema preparará sua solicitação pronta para envio imediato via WhatsApp ou E-mail (Outlook).</p>
+                <!-- Formulário Inteligente -->
+                <div class="bg-white p-8 lg:p-10 rounded-2xl border border-slate-200 shadow-lg">
+                    <h3 class="text-2xl font-serif font-bold text-petrolDark mb-2">Ficha de Triagem e Agendamento</h3>
+                    <p class="text-slate-500 text-xs mb-6">Preencha os campos abaixo. O sistema preparará sua solicitação pronta para envio imediato via WhatsApp ou E-mail (Outlook).</p>
                     
                     <form id="agendamento-form" onsubmit="event.preventDefault();" class="space-y-4">
                         <div>
-                            <label class="block text-gray-400 text-xs uppercase tracking-wider mb-1.5">Nome Completo *</label>
-                            <input type="text" id="cliente-nome" required class="w-full px-4 py-3 rounded-lg input-premium text-sm" placeholder="Digite seu nome completo">
+                            <label class="block text-slate-600 font-semibold text-xs uppercase tracking-wider mb-1.5">Nome Completo *</label>
+                            <input type="text" id="cliente-nome" required class="w-full px-4 py-3 rounded-lg input-clean text-sm" placeholder="Digite seu nome completo">
                         </div>
                         
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div>
-                                <label class="block text-gray-400 text-xs uppercase tracking-wider mb-1.5">Telefone / WhatsApp *</label>
-                                <input type="tel" id="cliente-telefone" oninput="mascaraTelefone(this)" maxlength="15" required class="w-full px-4 py-3 rounded-lg input-premium text-sm" placeholder="(11) 90000-0000">
+                                <label class="block text-slate-600 font-semibold text-xs uppercase tracking-wider mb-1.5">Telefone / WhatsApp *</label>
+                                <input type="tel" id="cliente-telefone" oninput="mascaraTelefone(this)" maxlength="15" required class="w-full px-4 py-3 rounded-lg input-clean text-sm" placeholder="(11) 90000-0000">
                             </div>
                             <div>
-                                <label class="block text-gray-400 text-xs uppercase tracking-wider mb-1.5">Área do Caso *</label>
-                                <select id="cliente-area" required class="w-full px-4 py-3 rounded-lg input-premium text-sm">
+                                <label class="block text-slate-600 font-semibold text-xs uppercase tracking-wider mb-1.5">Área do Caso *</label>
+                                <select id="cliente-area" required class="w-full px-4 py-3 rounded-lg input-clean text-sm">
                                     <option value="Direito da Saúde / Liminar">Direito da Saúde / Liminar</option>
                                     <option value="Direito Médico / Odontológico">Direito Médico / Odontológico</option>
                                     <option value="Direito do Autista (TEA)">Direito do Autista (TEA)</option>
@@ -432,8 +469,8 @@
 
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div>
-                                <label class="block text-gray-400 text-xs uppercase tracking-wider mb-1.5">Preferência de Atendimento *</label>
-                                <select id="cliente-preferencia" required class="w-full px-4 py-3 rounded-lg input-premium text-sm">
+                                <label class="block text-slate-600 font-semibold text-xs uppercase tracking-wider mb-1.5">Preferência de Atendimento *</label>
+                                <select id="cliente-preferencia" required class="w-full px-4 py-3 rounded-lg input-clean text-sm">
                                     <option value="Análise Urgente (Caso de Liminar)">Urgente (Caso de Liminar)</option>
                                     <option value="Consulta Online (WhatsApp / Vídeo)">Consulta Online (Vídeo/WhatsApp)</option>
                                     <option value="Consulta Presencial (Sede Brooklin - SP)">Presencial (Sede Brooklin - SP)</option>
@@ -442,83 +479,83 @@
                                 </select>
                             </div>
                             <div>
-                                <label class="block text-gray-400 text-xs uppercase tracking-wider mb-1.5">Seu E-mail (Opcional)</label>
-                                <input type="email" id="cliente-email" class="w-full px-4 py-3 rounded-lg input-premium text-sm" placeholder="seu@email.com">
+                                <label class="block text-slate-600 font-semibold text-xs uppercase tracking-wider mb-1.5">Seu E-mail (Opcional)</label>
+                                <input type="email" id="cliente-email" class="w-full px-4 py-3 rounded-lg input-clean text-sm" placeholder="seu@email.com">
                             </div>
                         </div>
 
                         <div>
-                            <label class="block text-gray-400 text-xs uppercase tracking-wider mb-1.5">Breve Resumo da Situação *</label>
-                            <textarea id="cliente-resumo" rows="3" required class="w-full px-4 py-3 rounded-lg input-premium resize-none text-sm" placeholder="Relate brevemente o ocorrido (ex: cirurgia negada, problema com imóvel, etc)..."></textarea>
+                            <label class="block text-slate-600 font-semibold text-xs uppercase tracking-wider mb-1.5">Breve Resumo da Situação *</label>
+                            <textarea id="cliente-resumo" rows="3" required class="w-full px-4 py-3 rounded-lg input-clean resize-none text-sm" placeholder="Relate brevemente o ocorrido (ex: cirurgia negada, problema com imóvel, etc)..."></textarea>
                         </div>
 
                         <div class="flex items-start gap-2 pt-1">
-                            <input type="checkbox" id="lgpd-consent" required class="mt-1 accent-gold cursor-pointer">
-                            <label for="lgpd-consent" class="text-gray-400 text-xs font-light leading-tight cursor-pointer">
-                                Declaro ciência da <button type="button" onclick="openModal('modal-privacidade')" class="text-gold underline hover:text-white">Política de Privacidade</button> e dos <button type="button" onclick="openModal('modal-termos')" class="text-gold underline hover:text-white">Termos de Uso</button>, autorizando o contato para triagem jurídica.
+                            <input type="checkbox" id="lgpd-consent" required class="mt-1 accent-petrol cursor-pointer">
+                            <label for="lgpd-consent" class="text-slate-500 text-xs leading-tight cursor-pointer">
+                                Declaro ciência da <button type="button" onclick="openModal('modal-privacidade')" class="text-petrol font-semibold underline hover:text-petrolDark">Política de Privacidade</button> e dos <button type="button" onclick="openModal('modal-termos')" class="text-petrol font-semibold underline hover:text-petrolDark">Termos de Uso</button>, autorizando o contato para triagem jurídica.
                             </label>
                         </div>
 
-                        <!-- Ações de Envio Prontas (WhatsApp + Outlook/Mail) -->
+                        <!-- Ações de Envio Prontas -->
                         <div class="pt-3 space-y-3">
-                            <button type="button" onclick="dispararAgendamento('whatsapp')" class="w-full bg-gold hover:bg-goldDark text-darker font-bold py-3.5 px-6 rounded-lg transition-all duration-300 flex items-center justify-center gap-2.5 shadow-lg">
+                            <button type="button" onclick="dispararAgendamento('whatsapp')" class="w-full bg-petrol hover:bg-petrolDark text-white font-bold py-3.5 px-6 rounded-lg transition-all duration-300 flex items-center justify-center gap-2.5 shadow-md hover:shadow-lg">
                                 <i class="fab fa-whatsapp text-xl"></i> Enviar Agendamento via WhatsApp
                             </button>
                             
                             <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                                <button type="button" onclick="dispararAgendamento('outlook')" class="w-full bg-darkGray border border-gray-700 hover:border-gold text-gray-200 hover:text-gold font-medium py-2.5 px-4 rounded-lg transition-all duration-300 text-xs flex items-center justify-center gap-2">
+                                <button type="button" onclick="dispararAgendamento('outlook')" class="w-full bg-ice border border-slate-300 hover:border-petrol text-slate-700 hover:text-petrol font-medium py-2.5 px-4 rounded-lg transition-all duration-300 text-xs flex items-center justify-center gap-2">
                                     <i class="far fa-envelope text-sm"></i> Abrir E-mail Pronto (Outlook / App)
                                 </button>
-                                <button type="button" onclick="dispararAgendamento('copiar')" class="w-full bg-darkGray border border-gray-700 hover:border-gold text-gray-200 hover:text-gold font-medium py-2.5 px-4 rounded-lg transition-all duration-300 text-xs flex items-center justify-center gap-2">
+                                <button type="button" onclick="dispararAgendamento('copiar')" class="w-full bg-ice border border-slate-300 hover:border-petrol text-slate-700 hover:text-petrol font-medium py-2.5 px-4 rounded-lg transition-all duration-300 text-xs flex items-center justify-center gap-2">
                                     <i class="far fa-copy text-sm"></i> Copiar Texto para Webmail
                                 </button>
                             </div>
                         </div>
 
                         <!-- Aviso de confirmação dinâmico -->
-                        <div id="feedback-msg" class="hidden p-3 rounded-lg bg-gold/10 border border-gold/40 text-gold text-xs text-center font-medium"></div>
+                        <div id="feedback-msg" class="hidden p-3 rounded-lg bg-petrolTint border border-petrol/30 text-petrolDark text-xs text-center font-medium"></div>
                     </form>
                 </div>
 
                 <!-- Informações Diretas e Mapa -->
                 <div class="space-y-8 flex flex-col justify-between">
-                    <div class="space-y-6">
+                    <div class="space-y-6 bg-white p-8 rounded-2xl border border-slate-200 shadow-sm">
                         <div class="flex items-start gap-4">
-                            <div class="w-12 h-12 rounded-full bg-gold/10 border border-gold/30 flex items-center justify-center flex-shrink-0">
-                                <i class="fab fa-whatsapp text-gold text-xl"></i>
+                            <div class="w-12 h-12 rounded-full bg-petrolTint border border-petrol/20 flex items-center justify-center flex-shrink-0">
+                                <i class="fab fa-whatsapp text-petrol text-xl"></i>
                             </div>
                             <div>
-                                <h4 class="text-white font-bold text-lg mb-1">WhatsApp Oficial da Banca</h4>
-                                <p class="text-gray-400 font-light text-sm">Canal prioritário para envio de laudos médicos, negativas e agendamento rápido.</p>
-                                <a href="https://wa.me/5511970414575?text=Ol%C3%A1%2C%20Dr.%20Judson!%20Gostaria%20de%20agendar%20uma%20consulta." target="_blank" class="text-gold hover:text-white font-medium block mt-1 transition-colors">(11) 97041-4575</a>
+                                <h4 class="text-petrolDark font-bold text-lg mb-1">WhatsApp Oficial da Banca</h4>
+                                <p class="text-slate-600 text-sm">Canal prioritário para envio de laudos médicos, negativas e agendamento rápido.</p>
+                                <a href="https://wa.me/5511970414575?text=Ol%C3%A1%2C%20Dr.%20Judson!%20Gostaria%20de%20agendar%20uma%20consulta." target="_blank" onclick="rastrearContato('contato_card_whatsapp')" class="text-petrol hover:text-petrolDark font-bold block mt-1 transition-colors">(11) 97041-4575</a>
                             </div>
                         </div>
 
-                        <div class="flex items-start gap-4">
-                            <div class="w-12 h-12 rounded-full bg-gold/10 border border-gold/30 flex items-center justify-center flex-shrink-0">
-                                <i class="fas fa-envelope-open-text text-gold text-lg"></i>
+                        <div class="flex items-start gap-4 pt-4 border-t border-slate-100">
+                            <div class="w-12 h-12 rounded-full bg-petrolTint border border-petrol/20 flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-envelope-open-text text-petrol text-lg"></i>
                             </div>
                             <div>
-                                <h4 class="text-white font-bold text-lg mb-1">E-mail Institucional e Telefone Fixo</h4>
-                                <p class="text-gray-400 font-light text-sm">Fixo: (11) 5686-1520</p>
-                                <a href="mailto:judsonnaty@aasp.org.br?subject=Solicita%C3%A7%C3%A3o%20de%20Consulta%20Jur%C3%ADdica%20-%20Site" class="text-gold hover:text-white font-medium text-sm block mt-0.5 transition-colors">judsonnaty@aasp.org.br</a>
+                                <h4 class="text-petrolDark font-bold text-lg mb-1">E-mail Institucional e Telefone Fixo</h4>
+                                <p class="text-slate-600 text-sm">Fixo: (11) 5686-1520</p>
+                                <a href="mailto:judsonnaty@aasp.org.br?subject=Solicita%C3%A7%C3%A3o%20de%20Consulta%20Jur%C3%ADdica%20-%20Site" onclick="rastrearContato('contato_card_email')" class="text-petrol hover:text-petrolDark font-semibold text-sm block mt-0.5 transition-colors">judsonnaty@aasp.org.br</a>
                             </div>
                         </div>
 
-                        <div class="flex items-start gap-4">
-                            <div class="w-12 h-12 rounded-full bg-gold/10 border border-gold/30 flex items-center justify-center flex-shrink-0">
-                                <i class="fas fa-map-marker-alt text-gold text-xl"></i>
+                        <div class="flex items-start gap-4 pt-4 border-t border-slate-100">
+                            <div class="w-12 h-12 rounded-full bg-petrolTint border border-petrol/20 flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-map-marker-alt text-petrol text-xl"></i>
                             </div>
                             <div>
-                                <h4 class="text-white font-bold text-lg mb-1">Sede Brooklin — São Paulo/SP</h4>
-                                <p class="text-gray-400 font-light text-sm leading-relaxed">Rua Barão do Triunfo, 88 - Conjunto 1106<br>Brooklin, São Paulo - SP | CEP: 04602-000</p>
+                                <h4 class="text-petrolDark font-bold text-lg mb-1">Sede Brooklin — São Paulo/SP</h4>
+                                <p class="text-slate-600 text-sm leading-relaxed">Rua Barão do Triunfo, 88 - Conjunto 1106<br>Brooklin, São Paulo - SP | CEP: 04602-000</p>
                             </div>
                         </div>
                     </div>
                     
                     <!-- Google Maps Iframe -->
-                    <div class="w-full h-56 rounded-xl overflow-hidden border border-gray-800/60 shadow-lg">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3655.856006456071!2d-46.6908906!3d-23.6094939!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce50ccde3c5be1%3A0xc3af87c4f4a9b6c0!2sR.%20Bar%C3%A3o%20do%20Triunfo%2C%2088%20-%20Brooklin%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2004602-000!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr" width="100%" height="100%" style="border:0; filter: grayscale(80%) contrast(1.2);" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <div class="w-full h-56 rounded-2xl overflow-hidden border border-slate-200 shadow-sm">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3655.856006456071!2d-46.6908906!3d-23.6094939!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce50ccde3c5be1%3A0xc3af87c4f4a9b6c0!2sR.%20Bar%C3%A3o%20do%20Triunfo%2C%2088%20-%20Brooklin%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2004602-000!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr" width="100%" height="100%" style="border:0; filter: grayscale(15%);" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
             </div>
@@ -526,46 +563,46 @@
     </section>
 
     <!-- Footer Institucional -->
-    <footer class="bg-darker pt-16 pb-8 border-t border-gray-900/60">
+    <footer class="bg-petrolDeep text-slate-300 pt-16 pb-8 border-t border-petrol">
         <div class="container mx-auto px-6">
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-12 mb-12">
                 <div>
                     <div class="flex items-center gap-3.5 mb-6">
-                        <i class="fas fa-balance-scale text-gold text-2xl"></i>
+                        <img src="logolosangojsescritorio.png" alt="Brasão Judson Sousa" class="h-12 w-12 object-contain bg-white/95 rounded-lg p-1">
                         <div>
                             <h2 class="font-serif font-bold text-lg tracking-widest text-white leading-none">JUDSON SOUSA</h2>
-                            <p class="text-[9px] text-gold tracking-[0.2em] uppercase mt-1">Sociedade Individual de Advocacia</p>
+                            <p class="text-[9px] text-slate-300 tracking-[0.18em] uppercase mt-1">Sociedade Individual de Advocacia</p>
                         </div>
                     </div>
-                    <p class="text-gray-400 text-sm leading-relaxed font-light mb-6">
+                    <p class="text-slate-300 text-sm leading-relaxed font-light mb-6">
                         Advocacia especializada pautada pela ética, combatividade técnica e atendimento humanizado na defesa da saúde, da família e do patrimônio.
                     </p>
                 </div>
                 
                 <div>
                     <h3 class="font-serif text-lg font-bold mb-6 text-white">Navegação Rápida</h3>
-                    <ul class="space-y-3 text-gray-400 text-sm font-light">
-                        <li><a href="#inicio" class="hover:text-gold transition-colors">Início</a></li>
-                        <li><a href="#atuacao" class="hover:text-gold transition-colors">Áreas de Especialidade</a></li>
-                        <li><a href="#sobre" class="hover:text-gold transition-colors">A Banca Jurídica</a></li>
-                        <li><a href="#faq" class="hover:text-gold transition-colors">Dúvidas Frequentes</a></li>
-                        <li><a href="#contato" class="hover:text-gold transition-colors">Agendar Consulta</a></li>
+                    <ul class="space-y-3 text-slate-300 text-sm font-light">
+                        <li><a href="#inicio" class="hover:text-white transition-colors">Início</a></li>
+                        <li><a href="#atuacao" class="hover:text-white transition-colors">Áreas de Especialidade</a></li>
+                        <li><a href="#sobre" class="hover:text-white transition-colors">A Banca Jurídica</a></li>
+                        <li><a href="#faq" class="hover:text-white transition-colors">Dúvidas Frequentes</a></li>
+                        <li><a href="#contato" class="hover:text-white transition-colors">Agendar Consulta</a></li>
                     </ul>
                 </div>
                 
                 <div>
                     <h3 class="font-serif text-lg font-bold mb-6 text-white">Transparência e Ética</h3>
-                    <p class="text-gray-400 text-sm font-light leading-relaxed mb-4">
+                    <p class="text-slate-300 text-sm font-light leading-relaxed mb-4">
                         Este website observa rigorosamente a Lei Geral de Proteção de Dados (Lei nº 13.709/2018) e as normas de publicidade profissional da OAB (Provimento nº 205/2021).
                     </p>
-                    <ul class="space-y-3 text-gray-400 text-sm font-light">
+                    <ul class="space-y-3 text-slate-300 text-sm font-light">
                         <li>
-                            <button onclick="openModal('modal-privacidade')" class="hover:text-gold transition-colors underline decoration-gray-700 underline-offset-4 text-left">
+                            <button onclick="openModal('modal-privacidade')" class="hover:text-white transition-colors underline decoration-slate-500 underline-offset-4 text-left">
                                 Política de Privacidade (LGPD)
                             </button>
                         </li>
                         <li>
-                            <button onclick="openModal('modal-termos')" class="hover:text-gold transition-colors underline decoration-gray-700 underline-offset-4 text-left">
+                            <button onclick="openModal('modal-termos')" class="hover:text-white transition-colors underline decoration-slate-500 underline-offset-4 text-left">
                                 Termos de Uso e Aviso Legal
                             </button>
                         </li>
@@ -573,11 +610,11 @@
                 </div>
             </div>
             
-            <div class="border-t border-gray-900/80 pt-8 text-center sm:flex sm:justify-between sm:text-left items-center">
-                <p class="text-gray-500 text-xs font-light mb-3 sm:mb-0">
-                    &copy; 2026 <strong>Judson Sousa Sociedade Individual de Advocacia</strong>. Todos os direitos reservados.
+            <div class="border-t border-white/10 pt-8 text-center sm:flex sm:justify-between sm:text-left items-center">
+                <p class="text-slate-400 text-xs font-light mb-3 sm:mb-0">
+                    &copy; 2026 <strong class="text-slate-200">Judson Sousa Sociedade Individual de Advocacia</strong>. Todos os direitos reservados.
                 </p>
-                <p class="text-gray-500 text-xs font-light">
+                <p class="text-slate-400 text-xs font-light">
                     Responsável Técnico: Dr. Judson Clementino de Sousa | OAB/SP 162.174
                 </p>
             </div>
@@ -585,34 +622,34 @@
     </footer>
 
     <!-- MODAL 1: POLÍTICA DE PRIVACIDADE (LGPD) -->
-    <div id="modal-privacidade" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
-        <div class="bg-dark border border-gray-800 rounded-2xl max-w-3xl w-full max-h-[85vh] flex flex-col shadow-2xl">
-            <div class="flex justify-between items-center p-6 border-b border-gray-800">
+    <div id="modal-privacidade" class="fixed inset-0 z-50 hidden bg-petrolDeep/75 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white border border-slate-200 rounded-2xl max-w-3xl w-full max-h-[85vh] flex flex-col shadow-2xl">
+            <div class="flex justify-between items-center p-6 border-b border-slate-200">
                 <div class="flex items-center gap-3">
-                    <i class="fas fa-user-shield text-gold text-xl"></i>
-                    <h3 class="font-serif text-xl font-bold text-white">Política de Privacidade e Proteção de Dados</h3>
+                    <i class="fas fa-user-shield text-petrol text-xl"></i>
+                    <h3 class="font-serif text-xl font-bold text-petrolDark">Política de Privacidade e Proteção de Dados</h3>
                 </div>
-                <button onclick="closeModal('modal-privacidade')" class="text-gray-400 hover:text-white text-2xl leading-none">&times;</button>
+                <button onclick="closeModal('modal-privacidade')" class="text-slate-400 hover:text-petrolDark text-2xl leading-none">&times;</button>
             </div>
             
-            <div class="p-6 overflow-y-auto modal-scroll space-y-4 text-gray-300 text-sm font-light leading-relaxed text-justify">
-                <p>O escritório <strong>Judson Sousa Sociedade Individual de Advocacia</strong>, sob titularidade e responsabilidade técnica do <strong>Dr. Judson Clementino de Sousa (OAB/SP 162.174)</strong>, com sede na Rua Barão do Triunfo, 88, Conj. 1106, Brooklin, São Paulo/SP, CEP 04602-000, reafirma seu compromisso com a privacidade, o sigilo profissional e a proteção dos dados pessoais de seus clientes e visitantes, em estrita observância à <strong>Lei Geral de Proteção de Dados Pessoais (LGPD – Lei nº 13.709/2018)</strong> e ao Estatuto da Advocacia e da OAB (Lei nº 8.906/1994).</p>
+            <div class="p-6 overflow-y-auto modal-scroll space-y-4 text-slate-600 text-sm leading-relaxed text-justify">
+                <p>O escritório <strong class="text-petrolDark">Judson Sousa Sociedade Individual de Advocacia</strong>, sob titularidade e responsabilidade técnica do <strong class="text-petrolDark">Dr. Judson Clementino de Sousa (OAB/SP 162.174)</strong>, com sede na Rua Barão do Triunfo, 88, Conj. 1106, Brooklin, São Paulo/SP, CEP 04602-000, reafirma seu compromisso com a privacidade, o sigilo profissional e a proteção dos dados pessoais de seus clientes e visitantes, em estrita observância à <strong class="text-petrolDark">Lei Geral de Proteção de Dados Pessoais (LGPD – Lei nº 13.709/2018)</strong> e ao Estatuto da Advocacia e da OAB (Lei nº 8.906/1994).</p>
 
-                <h4 class="text-gold font-semibold uppercase text-xs tracking-wider pt-2">1. Dados Coletados e Finalidade</h4>
+                <h4 class="text-petrol font-bold uppercase text-xs tracking-wider pt-2">1. Dados Coletados e Finalidade</h4>
                 <p>Coletamos apenas os dados estritamente necessários fornecidos voluntariamente pelo usuário ao preencher nossa ficha de triagem: <em>Nome completo, telefone/WhatsApp, e-mail, área de interesse jurídico, modalidade de atendimento e o resumo preliminar do caso</em>. Como o envio ocorre diretamente através do aplicativo de mensagens (WhatsApp) ou cliente de e-mail do próprio usuário, este website não armazena bancos de dados em servidores de terceiros.</p>
 
-                <h4 class="text-gold font-semibold uppercase text-xs tracking-wider pt-2">2. Tratamento de Dados Sensíveis (Direito da Saúde e TEA)</h4>
-                <p>Em razão da nossa atuação especializada em Direito Médico, Hospitalar, Odontológico, da Saúde e Direito do Autista (TEA), o titular poderá compartilhar voluntariamente informações sobre seu estado de saúde, prescrições ou negativas médicas durante o contato preliminar. O tratamento desses dados ocorre sob rigoroso sigilo profissional advocatício e fundamenta-se nas bases legais do <strong>Art. 7º, V e VI, e Art. 11, II, alíneas "a" e "d", da LGPD</strong> (procedimentos preliminares relacionados a contrato e exercício regular de direitos em processo judicial ou administrativo).</p>
+                <h4 class="text-petrol font-bold uppercase text-xs tracking-wider pt-2">2. Tratamento de Dados Sensíveis (Direito da Saúde e TEA)</h4>
+                <p>Em razão da nossa atuação especializada em Direito Médico, Hospitalar, Odontológico, da Saúde e Direito do Autista (TEA), o titular poderá compartilhar voluntariamente informações sobre seu estado de saúde, prescrições ou negativas médicas durante o contato preliminar. O tratamento desses dados ocorre sob rigoroso sigilo profissional advocatício e fundamenta-se nas bases legais do <strong class="text-petrolDark">Art. 7º, V e VI, e Art. 11, II, alíneas "a" e "d", da LGPD</strong> (procedimentos preliminares relacionados a contrato e exercício regular de direitos em processo judicial ou administrativo).</p>
 
-                <h4 class="text-gold font-semibold uppercase text-xs tracking-wider pt-2">3. Compartilhamento e Segurança</h4>
-                <p>A <strong>Judson Sousa Sociedade Individual de Advocacia</strong> jamais comercializa ou cede dados pessoais a terceiros para fins publicitários. As informações são acessadas exclusivamente pelo corpo jurídico do escritório, submetido ao dever legal de confidencialidade.</p>
+                <h4 class="text-petrol font-bold uppercase text-xs tracking-wider pt-2">3. Compartilhamento e Segurança</h4>
+                <p>A <strong class="text-petrolDark">Judson Sousa Sociedade Individual de Advocacia</strong> jamais comercializa ou cede dados pessoais a terceiros para fins publicitários. As informações são acessadas exclusivamente pelo corpo jurídico do escritório, submetido ao dever legal de confidencialidade.</p>
 
-                <h4 class="text-gold font-semibold uppercase text-xs tracking-wider pt-2">4. Direitos do Titular e Canal de Contato</h4>
-                <p>Nos termos do Art. 18 da LGPD, o titular pode solicitar a confirmação da existência de tratamento, o acesso, a atualização ou a eliminação de seus dados preliminares. Para exercer seus direitos, contate-nos pelo e-mail oficial: <strong>judsonnaty@aasp.org.br</strong> ou pelo telefone <strong>(11) 5686-1520</strong>.</p>
+                <h4 class="text-petrol font-bold uppercase text-xs tracking-wider pt-2">4. Direitos do Titular e Canal de Contato</h4>
+                <p>Nos termos do Art. 18 da LGPD, o titular pode solicitar a confirmação da existência de tratamento, o acesso, a atualização ou a eliminação de seus dados preliminares. Para exercer seus direitos, contate-nos pelo e-mail oficial: <strong class="text-petrolDark">judsonnaty@aasp.org.br</strong> ou pelo telefone <strong class="text-petrolDark">(11) 5686-1520</strong>.</p>
             </div>
 
-            <div class="p-4 border-t border-gray-800 flex justify-end">
-                <button onclick="closeModal('modal-privacidade')" class="bg-gold hover:bg-goldDark text-darker font-bold px-6 py-2 rounded text-sm transition-colors">
+            <div class="p-4 border-t border-slate-200 flex justify-end">
+                <button onclick="closeModal('modal-privacidade')" class="bg-petrol hover:bg-petrolDark text-white font-semibold px-6 py-2 rounded-lg text-sm transition-colors">
                     Compreendido
                 </button>
             </div>
@@ -620,32 +657,32 @@
     </div>
 
     <!-- MODAL 2: TERMOS DE USO E AVISO LEGAL -->
-    <div id="modal-termos" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
-        <div class="bg-dark border border-gray-800 rounded-2xl max-w-3xl w-full max-h-[85vh] flex flex-col shadow-2xl">
-            <div class="flex justify-between items-center p-6 border-b border-gray-800">
+    <div id="modal-termos" class="fixed inset-0 z-50 hidden bg-petrolDeep/75 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white border border-slate-200 rounded-2xl max-w-3xl w-full max-h-[85vh] flex flex-col shadow-2xl">
+            <div class="flex justify-between items-center p-6 border-b border-slate-200">
                 <div class="flex items-center gap-3">
-                    <i class="fas fa-gavel text-gold text-xl"></i>
-                    <h3 class="font-serif text-xl font-bold text-white">Termos de Uso e Aviso Legal</h3>
+                    <i class="fas fa-gavel text-petrol text-xl"></i>
+                    <h3 class="font-serif text-xl font-bold text-petrolDark">Termos de Uso e Aviso Legal</h3>
                 </div>
-                <button onclick="closeModal('modal-termos')" class="text-gray-400 hover:text-white text-2xl leading-none">&times;</button>
+                <button onclick="closeModal('modal-termos')" class="text-slate-400 hover:text-petrolDark text-2xl leading-none">&times;</button>
             </div>
             
-            <div class="p-6 overflow-y-auto modal-scroll space-y-4 text-gray-300 text-sm font-light leading-relaxed text-justify">
-                <h4 class="text-gold font-semibold uppercase text-xs tracking-wider">1. Caráter Informativo (Provimento nº 205/2021 da OAB)</h4>
-                <p>Todo o conteúdo disponibilizado no website da <strong>Judson Sousa Sociedade Individual de Advocacia</strong> possui caráter estritamente informativo e institucional, em respeito às normas éticas da Ordem dos Advogados do Brasil. Nenhuma informação aqui exposta substitui o aconselhamento jurídico formal e individualizado.</p>
+            <div class="p-6 overflow-y-auto modal-scroll space-y-4 text-slate-600 text-sm leading-relaxed text-justify">
+                <h4 class="text-petrol font-bold uppercase text-xs tracking-wider">1. Caráter Informativo (Provimento nº 205/2021 da OAB)</h4>
+                <p>Todo o conteúdo disponibilizado no website da <strong class="text-petrolDark">Judson Sousa Sociedade Individual de Advocacia</strong> possui caráter estritamente informativo e institucional, em respeito às normas éticas da Ordem dos Advogados do Brasil. Nenhuma informação aqui exposta substitui o aconselhamento jurídico formal e individualizado.</p>
 
-                <h4 class="text-gold font-semibold uppercase text-xs tracking-wider pt-2">2. Ausência de Contratação Automática</h4>
-                <p>O envio unilateral de relatos, dúvidas ou documentos através do formulário deste site, e-mail ou WhatsApp <strong>não constitui relação contratual de mandato (cliente-advogado)</strong>, tampouco gera para o escritório a obrigação de protocolo de medidas urgentes ou controle de prazos processuais antes da formalização contratual. A representação jurídica inicia-se exclusivamente após a aceitação formal do caso e a assinatura de <strong>Contrato de Honorários e Procuração Ad Judicia</strong>.</p>
+                <h4 class="text-petrol font-bold uppercase text-xs tracking-wider pt-2">2. Ausência de Contratação Automática</h4>
+                <p>O envio unilateral de relatos, dúvidas ou documentos através do formulário deste site, e-mail ou WhatsApp <strong class="text-petrolDark">não constitui relação contratual de mandato (cliente-advogado)</strong>, tampouco gera para o escritório a obrigação de protocolo de medidas urgentes ou controle de prazos processuais antes da formalização contratual. A representação jurídica inicia-se exclusivamente após a aceitação formal do caso e a assinatura de <strong class="text-petrolDark">Contrato de Honorários e Procuração Ad Judicia</strong>.</p>
 
-                <h4 class="text-gold font-semibold uppercase text-xs tracking-wider pt-2">3. Obrigação de Meio</h4>
+                <h4 class="text-petrol font-bold uppercase text-xs tracking-wider pt-2">3. Obrigação de Meio</h4>
                 <p>A advocacia é uma atividade de meio, e não de resultado. Embora nossa equipe atue com excelência técnica e celeridade na condução de pedidos de tutela de urgência (liminares) e processos judiciais, as decisões judiciais são de competência exclusiva dos magistrados, inexistindo qualquer promessa ou garantia prévia de resultado.</p>
 
-                <h4 class="text-gold font-semibold uppercase text-xs tracking-wider pt-2">4. Propriedade Intelectual e Foro</h4>
+                <h4 class="text-petrol font-bold uppercase text-xs tracking-wider pt-2">4. Propriedade Intelectual e Foro</h4>
                 <p>Os textos, layout e elementos gráficos desta página são protegidos pela legislação de direitos autorais, sendo proibida sua reprodução por terceiros. Fica eleito o Foro da Comarca da Capital do Estado de São Paulo para dirimir eventuais questões relativas a estes termos.</p>
             </div>
 
-            <div class="p-4 border-t border-gray-800 flex justify-end">
-                <button onclick="closeModal('modal-termos')" class="bg-gold hover:bg-goldDark text-darker font-bold px-6 py-2 rounded text-sm transition-colors">
+            <div class="p-4 border-t border-slate-200 flex justify-end">
+                <button onclick="closeModal('modal-termos')" class="bg-petrol hover:bg-petrolDark text-white font-semibold px-6 py-2 rounded-lg text-sm transition-colors">
                     Fechar
                 </button>
             </div>
@@ -654,32 +691,69 @@
 
     <!-- WhatsApp Flutuante -->
     <div class="fixed bottom-6 right-6 z-40 flex items-center gap-3">
-        <div class="hidden sm:block bg-white text-darker text-sm font-bold px-4 py-2 rounded-lg shadow-[0_5px_15px_rgba(0,0,0,0.3)] relative tooltip-tail animate-pulse-soft">
+        <div class="hidden sm:block bg-petrolDark text-white text-sm font-semibold px-4 py-2 rounded-lg shadow-lg relative tooltip-tail animate-pulse-soft">
             Falar com o escritório
         </div>
-        <a href="https://wa.me/5511970414575?text=Ol%C3%A1%2C%20Dr.%20Judson!%20Acessei%20o%20site%20do%20escrit%C3%B3rio%20e%20gostaria%20de%20atendimento." target="_blank" aria-label="Iniciar conversa no WhatsApp" class="bg-[#25D366] hover:bg-[#128C7E] text-white w-14 h-14 rounded-full flex items-center justify-center text-3xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110">
+        <a href="https://wa.me/5511970414575?text=Ol%C3%A1%2C%20Dr.%20Judson!%20Acessei%20o%20site%20do%20escrit%C3%B3rio%20e%20gostaria%20de%20atendimento." target="_blank" onclick="rastrearContato('flutuante_whatsapp')" aria-label="Iniciar conversa no WhatsApp" class="bg-[#25D366] hover:bg-[#128C7E] text-white w-14 h-14 rounded-full flex items-center justify-center text-3xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110">
             <i class="fab fa-whatsapp"></i>
         </a>
     </div>
 
     <!-- Botão Topo -->
-    <a href="#inicio" id="back-to-top" aria-label="Voltar ao topo" class="fixed bottom-24 right-7 bg-darker border border-gold/50 text-gold hover:bg-gold hover:text-darker w-12 h-12 rounded-full flex items-center justify-center text-xl shadow-lg transition-all duration-300 z-30">
+    <a href="#inicio" id="back-to-top" aria-label="Voltar ao topo" class="fixed bottom-24 right-7 bg-white border border-petrol/40 text-petrol hover:bg-petrol hover:text-white w-12 h-12 rounded-full flex items-center justify-center text-xl shadow-md transition-all duration-300 z-30">
         <i class="fas fa-arrow-up"></i>
     </a>
 
     <script>
+        // Rastreamento de Eventos de Conversão (Google Analytics 4)
+        function rastrearContato(origem, detalhe) {
+            if (typeof gtag === 'function') {
+                const nomeEvento = origem.includes('email') ? 'contato_email' : 'contato_whatsapp';
+                gtag('event', nomeEvento, {
+                    event_category: 'conversao',
+                    event_label: origem,
+                    detalhe_caso: detalhe || 'clique_direto'
+                });
+            }
+        }
+
+        // Menu Mobile
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const btn = document.getElementById('mobile-menu-btn');
+            const icon = document.getElementById('mobile-menu-icon');
+            const isHidden = menu.classList.contains('hidden');
+
+            if (isHidden) {
+                menu.classList.remove('hidden');
+                btn.setAttribute('aria-expanded', 'true');
+                icon.classList.replace('fa-bars', 'fa-times');
+            } else {
+                closeMobileMenu();
+            }
+        }
+
+        function closeMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const btn = document.getElementById('mobile-menu-btn');
+            const icon = document.getElementById('mobile-menu-icon');
+            menu.classList.add('hidden');
+            btn.setAttribute('aria-expanded', 'false');
+            icon.classList.replace('fa-times', 'fa-bars');
+        }
+
         // Efeito no Menu e Botão Topo
         window.addEventListener('scroll', function() {
             const nav = document.getElementById('nav-container');
             if (window.scrollY > 50) {
-                nav.classList.add('py-2.5');
-                nav.classList.remove('py-4');
+                nav.classList.add('py-2');
+                nav.classList.remove('py-3.5');
             } else {
-                nav.classList.add('py-4');
-                nav.classList.remove('py-2.5');
+                nav.classList.add('py-3.5');
+                nav.classList.remove('py-2');
             }
 
-            var backToTopButton = document.getElementById('back-to-top');
+            const backToTopButton = document.getElementById('back-to-top');
             if (window.scrollY > 500) {
                 backToTopButton.classList.add('show');
             } else {
@@ -709,7 +783,7 @@
             const icon = button.querySelector('.faq-icon');
             
             document.querySelectorAll('.faq-content').forEach(el => {
-                if(el !== content) {
+                if (el !== content) {
                     el.style.maxHeight = null;
                     el.previousElementSibling.querySelector('.faq-icon').style.transform = 'rotate(0deg)';
                 }
@@ -764,6 +838,8 @@
             }
 
             if (canal === 'whatsapp') {
+                rastrearContato('formulario_whatsapp', area);
+
                 let textoWpp = `Olá, Dr. Judson! Acessei o site do escritório e gostaria de agendar uma análise do meu caso.\n\n`;
                 textoWpp += `*Nome:* ${nome}\n`;
                 textoWpp += `*Telefone:* ${telefone}\n`;
@@ -779,6 +855,8 @@
                 feedback.classList.remove('hidden');
             } 
             else if (canal === 'outlook') {
+                rastrearContato('formulario_email_outlook', area);
+
                 const assunto = `[Agendamento Site] ${area} - ${nome}`;
                 let corpoEmail = `Prezado Dr. Judson Sousa,\r\n\r\n`;
                 corpoEmail += `Solicito agendamento de análise jurídica através do site oficial.\r\n\r\n`;
@@ -798,6 +876,8 @@
                 feedback.classList.remove('hidden');
             }
             else if (canal === 'copiar') {
+                rastrearContato('formulario_email_copiar', area);
+
                 let textoCopia = `Para: judsonnaty@aasp.org.br\n`;
                 textoCopia += `Assunto: [Agendamento Site] ${area} - ${nome}\n\n`;
                 textoCopia += `Nome: ${nome}\nTelefone: ${telefone}\n`;
