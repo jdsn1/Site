@@ -142,15 +142,7 @@
 <body class="antialiased selection:bg-petrol selection:text-white">
 
     <!-- Header Institucional -->
-    <header class="fixed w-full top-0 z-40 flex flex-col transition-all duration-300 shadow-sm" id="main-header">
-        <!-- Faixa Superior -->
-        <div class="bg-petrolDark text-slate-100 text-center py-1.5 px-4 text-[11px] sm:text-xs font-medium tracking-wider uppercase flex justify-center items-center gap-4">
-            <span><i class="fas fa-map-marker-alt text-slate-300 mr-1"></i> Atendimento Nacional — Online e Presencial (São Paulo/SP)</span>
-            <span class="hidden sm:inline text-slate-500">|</span>
-            <span class="hidden sm:inline"><i class="fas fa-gavel text-slate-300 mr-1"></i> Especialistas em Tutelas de Urgência</span>
-        </div>
-        
-        <!-- Barra de Navegação Clara -->
+    <header class="fixed w-full top-0 z-40 transition-all duration-300 shadow-sm" id="main-header">
         <div class="bg-white/95 backdrop-blur-md border-b border-slate-200 w-full transition-all duration-300 py-3.5" id="nav-container">
             <div class="container mx-auto px-6 flex justify-between items-center">
                 <!-- Logo com Brasão Oficial -->
@@ -163,10 +155,11 @@
                 </a>
 
                 <!-- Menu Desktop -->
-                <nav class="hidden lg:flex gap-8">
+                <nav class="hidden lg:flex gap-7">
                     <a href="#inicio" class="text-sm font-medium text-slate-700 hover:text-petrol transition-colors">Início</a>
                     <a href="#atuacao" class="text-sm font-medium text-slate-700 hover:text-petrol transition-colors">Áreas de Atuação</a>
                     <a href="#sobre" class="text-sm font-medium text-slate-700 hover:text-petrol transition-colors">A Banca</a>
+                    <a href="#como-funciona" class="text-sm font-medium text-slate-700 hover:text-petrol transition-colors">Como Funciona</a>
                     <a href="#faq" class="text-sm font-medium text-slate-700 hover:text-petrol transition-colors">Dúvidas</a>
                     <a href="#contato" class="text-sm font-medium text-slate-700 hover:text-petrol transition-colors">Agendamento</a>
                 </nav>
@@ -188,6 +181,7 @@
                 <a href="#inicio" onclick="closeMobileMenu()" class="block py-2 text-sm font-semibold text-slate-700 hover:text-petrol border-b border-slate-100">Início</a>
                 <a href="#atuacao" onclick="closeMobileMenu()" class="block py-2 text-sm font-semibold text-slate-700 hover:text-petrol border-b border-slate-100">Áreas de Atuação</a>
                 <a href="#sobre" onclick="closeMobileMenu()" class="block py-2 text-sm font-semibold text-slate-700 hover:text-petrol border-b border-slate-100">A Banca</a>
+                <a href="#como-funciona" onclick="closeMobileMenu()" class="block py-2 text-sm font-semibold text-slate-700 hover:text-petrol border-b border-slate-100">Como Funciona</a>
                 <a href="#faq" onclick="closeMobileMenu()" class="block py-2 text-sm font-semibold text-slate-700 hover:text-petrol border-b border-slate-100">Dúvidas Frequentes</a>
                 <a href="#contato" onclick="closeMobileMenu()" class="block py-2 text-sm font-semibold text-slate-700 hover:text-petrol">Agendamento</a>
                 <a href="https://wa.me/5511970414575?text=Ol%C3%A1%2C%20Dr.%20Judson!%20Acessei%20o%20site%20do%20escrit%C3%B3rio%20e%20gostaria%20de%20solicitar%20orienta%C3%A7%C3%A3o%20jur%C3%ADdica." target="_blank" onclick="rastrearContato('mobile_menu_whatsapp'); closeMobileMenu();" class="mt-3 w-full bg-petrol hover:bg-petrolDark text-white py-3 px-4 rounded-lg font-semibold text-sm flex items-center justify-center gap-2">
@@ -198,7 +192,7 @@
     </header>
 
     <!-- Hero Section (Azul Petróleo Institucional) -->
-    <section id="inicio" class="relative pt-36 pb-16 lg:pt-48 lg:pb-24 overflow-hidden bg-gradient-to-br from-petrolDeep via-petrolDark to-petrol text-white">
+    <section id="inicio" class="relative pt-28 pb-16 lg:pt-36 lg:pb-24 overflow-hidden bg-gradient-to-br from-petrolDeep via-petrolDark to-petrol text-white">
         <div class="absolute top-0 left-0 w-full h-full overflow-hidden z-0 pointer-events-none">
             <div class="absolute -top-[20%] -right-[10%] w-[50%] h-[50%] rounded-full bg-white/5 blur-[120px]"></div>
             <div class="absolute -bottom-[20%] -left-[10%] w-[40%] h-[40%] rounded-full bg-slate-300/5 blur-[100px]"></div>
@@ -206,8 +200,9 @@
         
         <div class="container mx-auto px-6 relative z-10 grid lg:grid-cols-2 gap-12 items-center">
             <div class="space-y-7 fade-in-up">
-                <div class="inline-block border border-slate-400/30 bg-white/10 backdrop-blur-sm rounded-full px-4 py-1.5">
-                    <span class="text-slate-100 text-xs font-semibold tracking-widest uppercase">Experiência, Técnica e Combatividade</span>
+                <div class="inline-flex items-center gap-2 border border-slate-400/30 bg-white/10 backdrop-blur-sm rounded-full px-4 py-1.5">
+                    <i class="fas fa-map-marker-alt text-slate-300 text-xs"></i>
+                    <span class="text-slate-100 text-[11px] sm:text-xs font-semibold tracking-wider uppercase">Atendimento Nacional (Online) • Sede em São Paulo/SP</span>
                 </div>
                 
                 <h1 class="font-serif text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight text-white">
@@ -289,7 +284,7 @@
     </section>
 
     <!-- Áreas de Atuação -->
-    <section id="atuacao" class="py-24 bg-white overflow-hidden scroll-mt-32">
+    <section id="atuacao" class="py-24 bg-white overflow-hidden scroll-mt-24">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16 space-y-3 fade-in-up">
                 <h3 class="text-petrol font-semibold tracking-widest uppercase text-xs">Atuação Multidisciplinar</h3>
@@ -346,7 +341,7 @@
     </section>
 
     <!-- Sobre a Banca e o Titular -->
-    <section id="sobre" class="py-24 bg-ice border-y border-slate-200 relative overflow-hidden scroll-mt-32">
+    <section id="sobre" class="py-24 bg-ice border-t border-slate-200 relative overflow-hidden scroll-mt-24">
         <div class="container mx-auto px-6 relative z-10">
             <div class="grid lg:grid-cols-2 gap-16 items-center">
                 <div class="relative max-w-sm mx-auto lg:mx-0 fade-in-up">
@@ -388,8 +383,51 @@
         </div>
     </section>
 
+    <!-- Como Funciona o Atendimento (3 Etapas) -->
+    <section id="como-funciona" class="py-24 bg-petrolDark text-white scroll-mt-24">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 space-y-3 fade-in-up">
+                <h3 class="text-slate-300 font-semibold tracking-widest uppercase text-xs">Atendimento Sem Burocracia</h3>
+                <h2 class="font-serif text-3xl lg:text-5xl font-bold text-white">Como Funciona o Atendimento</h2>
+                <div class="w-16 h-1 bg-slate-400/60 mx-auto rounded"></div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto fade-in-up delay-100">
+                <div class="bg-petrol/40 border border-white/10 rounded-2xl p-8 relative">
+                    <span class="font-serif text-4xl font-bold text-white/20 block mb-4">01</span>
+                    <h3 class="font-serif text-xl font-bold text-white mb-3">Relato e Documentos</h3>
+                    <p class="text-slate-200 text-sm leading-relaxed font-light">
+                        Você entra em contato pelo WhatsApp ou formulário de triagem e envia um breve resumo da situação (como laudo médico, negativa do plano ou contrato).
+                    </p>
+                </div>
+
+                <div class="bg-petrol/40 border border-white/10 rounded-2xl p-8 relative">
+                    <span class="font-serif text-4xl font-bold text-white/20 block mb-4">02</span>
+                    <h3 class="font-serif text-xl font-bold text-white mb-3">Análise Técnica Jurídica</h3>
+                    <p class="text-slate-200 text-sm leading-relaxed font-light">
+                        Avaliamos a viabilidade do caso, a jurisprudência aplicável e definimos a estratégia mais segura — presencialmente no Brooklin ou por vídeo/WhatsApp.
+                    </p>
+                </div>
+
+                <div class="bg-petrol/40 border border-white/10 rounded-2xl p-8 relative">
+                    <span class="font-serif text-4xl font-bold text-white/20 block mb-4">03</span>
+                    <h3 class="font-serif text-xl font-bold text-white mb-3">Atuação Célere e Digital</h3>
+                    <p class="text-slate-200 text-sm leading-relaxed font-light">
+                        Formalizada a contratação com assinatura eletrônica pelo celular, protocolamos as medidas cabíveis (inclusive liminares urgentes) com acompanhamento transparente.
+                    </p>
+                </div>
+            </div>
+
+            <div class="text-center mt-12 fade-in-up delay-200">
+                <a href="#contato" class="inline-flex items-center gap-2 bg-white hover:bg-slate-100 text-petrolDark font-bold px-8 py-3.5 rounded-lg text-sm transition-all duration-300 shadow-lg">
+                    <i class="far fa-calendar-check"></i> Iniciar Triagem do Meu Caso
+                </a>
+            </div>
+        </div>
+    </section>
+
     <!-- FAQ -->
-    <section id="faq" class="py-24 bg-white scroll-mt-32">
+    <section id="faq" class="py-24 bg-white scroll-mt-24">
         <div class="container mx-auto px-6 max-w-4xl">
             <div class="text-center mb-16 space-y-3 fade-in-up">
                 <h3 class="text-petrol font-semibold tracking-widest uppercase text-xs">Esclarecimentos Jurídicos</h3>
@@ -449,8 +487,8 @@
         </div>
     </section>
 
-    <!-- Seção de Agendamento Triplo -->
-    <section id="contato" class="py-24 bg-ice border-t border-slate-200 relative overflow-hidden scroll-mt-32">
+    <!-- Seção de Agendamento -->
+    <section id="contato" class="py-24 bg-ice border-t border-slate-200 relative overflow-hidden scroll-mt-24">
         <div class="container mx-auto px-6 relative z-10">
             <div class="text-center mb-16 space-y-3 fade-in-up">
                 <h3 class="text-petrol font-semibold tracking-widest uppercase text-xs">Atendimento Online e Presencial</h3>
@@ -463,7 +501,7 @@
                 <!-- Formulário Inteligente -->
                 <div class="bg-white p-8 lg:p-10 rounded-2xl border border-slate-200 shadow-lg">
                     <h3 class="text-2xl font-serif font-bold text-petrolDark mb-2">Ficha de Triagem e Agendamento</h3>
-                    <p class="text-slate-500 text-xs mb-6">Preencha os campos abaixo. O sistema preparará sua solicitação pronta para envio imediato via WhatsApp ou E-mail (Outlook).</p>
+                    <p class="text-slate-500 text-xs mb-6">Preencha os campos abaixo para iniciar seu atendimento com as informações organizadas.</p>
                     
                     <form id="agendamento-form" onsubmit="event.preventDefault();" class="space-y-4">
                         <div>
@@ -519,19 +557,23 @@
                             </label>
                         </div>
 
-                        <!-- Ações de Envio Prontas -->
-                        <div class="pt-3 space-y-3">
-                            <button type="button" onclick="dispararAgendamento('whatsapp')" class="w-full bg-petrol hover:bg-petrolDark text-white font-bold py-3.5 px-6 rounded-lg transition-all duration-300 flex items-center justify-center gap-2.5 shadow-md hover:shadow-lg">
-                                <i class="fab fa-whatsapp text-xl"></i> Enviar Agendamento via WhatsApp
+                        <!-- Ação Principal (WhatsApp) + Alternativas Discretas (E-mail) -->
+                        <div class="pt-3 space-y-4">
+                            <button type="button" onclick="dispararAgendamento('whatsapp')" class="w-full bg-petrol hover:bg-petrolDark text-white font-bold py-4 px-6 rounded-lg transition-all duration-300 flex items-center justify-center gap-2.5 shadow-md hover:shadow-lg text-base">
+                                <i class="fab fa-whatsapp text-xl text-[#4ADE80]"></i> Enviar Agendamento via WhatsApp
                             </button>
                             
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                                <button type="button" onclick="dispararAgendamento('outlook')" class="w-full bg-ice border border-slate-300 hover:border-petrol text-slate-700 hover:text-petrol font-medium py-2.5 px-4 rounded-lg transition-all duration-300 text-xs flex items-center justify-center gap-2">
-                                    <i class="far fa-envelope text-sm"></i> Abrir E-mail Pronto (Outlook / App)
-                                </button>
-                                <button type="button" onclick="dispararAgendamento('copiar')" class="w-full bg-ice border border-slate-300 hover:border-petrol text-slate-700 hover:text-petrol font-medium py-2.5 px-4 rounded-lg transition-all duration-300 text-xs flex items-center justify-center gap-2">
-                                    <i class="far fa-copy text-sm"></i> Copiar Texto para Webmail
-                                </button>
+                            <div class="pt-2 border-t border-slate-100 text-center">
+                                <span class="text-slate-400 text-[11px] uppercase tracking-wider block mb-2">Prefere enviar por e-mail?</span>
+                                <div class="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-xs">
+                                    <button type="button" onclick="dispararAgendamento('outlook')" class="text-slate-600 hover:text-petrol font-medium underline underline-offset-4 transition-colors inline-flex items-center gap-1.5">
+                                        <i class="far fa-envelope"></i> Abrir no Outlook / App
+                                    </button>
+                                    <span class="text-slate-300 hidden sm:inline">•</span>
+                                    <button type="button" onclick="dispararAgendamento('copiar')" class="text-slate-600 hover:text-petrol font-medium underline underline-offset-4 transition-colors inline-flex items-center gap-1.5">
+                                        <i class="far fa-copy"></i> Copiar texto para Webmail
+                                    </button>
+                                </div>
                             </div>
                         </div>
 
@@ -608,6 +650,7 @@
                         <li><a href="#inicio" class="hover:text-white transition-colors">Início</a></li>
                         <li><a href="#atuacao" class="hover:text-white transition-colors">Áreas de Especialidade</a></li>
                         <li><a href="#sobre" class="hover:text-white transition-colors">A Banca Jurídica</a></li>
+                        <li><a href="#como-funciona" class="hover:text-white transition-colors">Como Funciona</a></li>
                         <li><a href="#faq" class="hover:text-white transition-colors">Dúvidas Frequentes</a></li>
                         <li><a href="#contato" class="hover:text-white transition-colors">Agendar Consulta</a></li>
                     </ul>
