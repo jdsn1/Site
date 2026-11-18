@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://judsonsousa.com.br/sitemap.xml
