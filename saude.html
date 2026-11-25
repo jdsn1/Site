@@ -116,6 +116,7 @@
       "name": "Judson Sousa Sociedade Individual de Advocacia — Direito da Saúde",
       "url": "https://judsonsousa.com.br/saude.html",
       "logo": "https://judsonsousa.com.br/logolosangojsescritorio.png",
+      "image": "https://judsonsousa.com.br/333680.jpg",
       "telephone": "+55-11-97041-4575",
       "email": "judsonnaty@aasp.org.br",
       "address": {
@@ -145,8 +146,8 @@
             </a>
 
             <div class="flex items-center gap-4">
-                <a href="index.html" class="hidden md:inline-block text-xs font-medium text-slate-500 hover:text-petrol transition-colors">
-                    Site Institucional
+                <a href="index.html" class="hidden md:inline-flex items-center gap-1.5 text-xs font-medium text-slate-600 hover:text-petrol transition-colors">
+                    <i class="fas fa-arrow-left text-[10px]"></i> Site Institucional
                 </a>
                 <a href="https://wa.me/5511970414575?text=Ol%C3%A1%2C%20Dr.%20Judson!%20Acessei%20a%20p%C3%A1gina%20de%20Direito%20da%20Sa%C3%BAde%20e%20preciso%20de%20orienta%C3%A7%C3%A3o%20sobre%20meu%20caso." target="_blank" onclick="rastrearContato('lp_saude_header_whatsapp')" class="bg-petrol hover:bg-petrolDark text-white px-4 sm:px-5 py-2.5 rounded-lg font-semibold text-xs sm:text-sm transition-all duration-300 flex items-center gap-2 shadow-sm">
                     <i class="fab fa-whatsapp text-base sm:text-lg text-[#4ADE80]"></i>
@@ -163,7 +164,6 @@
         </div>
         
         <div class="container mx-auto px-6 relative z-10 grid lg:grid-cols-12 gap-12 items-center">
-            <!-- Coluna Esquerda: Promessa Institucional + CTAs -->
             <div class="lg:col-span-7 space-y-6 fade-in-up">
                 <div class="inline-flex items-center gap-2 border border-slate-400/30 bg-white/10 backdrop-blur-sm rounded-full px-4 py-1.5">
                     <i class="fas fa-gavel text-slate-300 text-xs"></i>
@@ -194,7 +194,6 @@
                 </div>
             </div>
             
-            <!-- Coluna Direita: Quadro de Urgências (Foco em Identificação Imediata) -->
             <div class="lg:col-span-5 fade-in-up delay-200">
                 <div class="bg-white/10 backdrop-blur-md border border-white/15 rounded-2xl p-6 sm:p-8 shadow-2xl">
                     <h2 class="font-serif text-xl font-bold text-white mb-2">Situações urgentes que atendemos:</h2>
@@ -237,38 +236,50 @@
             </div>
 
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-7 max-w-6xl mx-auto fade-in-up delay-100">
-                <div class="bg-white p-8 rounded-xl border border-slate-200/90 shadow-sm hover:border-petrol transition-all">
-                    <i class="fas fa-procedures text-3xl text-petrol mb-4"></i>
+                <div class="bg-white p-8 rounded-xl border border-slate-200/90 shadow-sm hover:border-teal-700/40 hover:shadow-lg transition-all duration-300 group">
+                    <div class="w-14 h-14 rounded-xl bg-petrolTint text-petrol group-hover:bg-teal-700 group-hover:text-white flex items-center justify-center mb-5 transition-all duration-300 group-hover:scale-105 shadow-sm">
+                        <i class="fas fa-procedures text-2xl"></i>
+                    </div>
                     <h3 class="font-serif text-xl font-bold text-petrolDark mb-3">Cirurgias e Materiais (OPME)</h3>
                     <p class="text-slate-600 text-sm leading-relaxed">A operadora não pode substituir a técnica cirúrgica ou os materiais prescritos pelo médico assistente. Atuamos contra negativas de cirurgia robótica, próteses importadas e internações.</p>
                 </div>
 
-                <div class="bg-white p-8 rounded-xl border border-slate-200/90 shadow-sm hover:border-petrol transition-all">
-                    <i class="fas fa-pills text-3xl text-petrol mb-4"></i>
+                <div class="bg-white p-8 rounded-xl border border-slate-200/90 shadow-sm hover:border-rose-700/40 hover:shadow-lg transition-all duration-300 group">
+                    <div class="w-14 h-14 rounded-xl bg-petrolTint text-petrol group-hover:bg-rose-700 group-hover:text-white flex items-center justify-center mb-5 transition-all duration-300 group-hover:scale-105 shadow-sm">
+                        <i class="fas fa-pills text-2xl"></i>
+                    </div>
                     <h3 class="font-serif text-xl font-bold text-petrolDark mb-3">Medicamentos de Alto Custo</h3>
                     <p class="text-slate-600 text-sm leading-relaxed">Fornecimento judicial pelo plano de saúde ou pelo SUS de quimioterápicos, imunobiológicos e fármacos de alto custo, inclusive fora do rol da ANS quando há prescrição fundamentada.</p>
                 </div>
 
-                <div class="bg-white p-8 rounded-xl border border-slate-200/90 shadow-sm hover:border-petrol transition-all">
-                    <i class="fas fa-puzzle-piece text-3xl text-petrol mb-4"></i>
+                <div class="bg-white p-8 rounded-xl border border-slate-200/90 shadow-sm hover:border-sky-700/40 hover:shadow-lg transition-all duration-300 group">
+                    <div class="w-14 h-14 rounded-xl bg-petrolTint text-petrol group-hover:bg-sky-700 group-hover:text-white flex items-center justify-center mb-5 transition-all duration-300 group-hover:scale-105 shadow-sm">
+                        <i class="fas fa-puzzle-piece text-2xl"></i>
+                    </div>
                     <h3 class="font-serif text-xl font-bold text-petrolDark mb-3">Autismo (TEA) e Terapias</h3>
                     <p class="text-slate-600 text-sm leading-relaxed">Garantia de cobertura integral ou reembolso adequado para terapias multidisciplinares (ABA, fonoaudiologia, psicologia, TO e psicopedagogia) sem limitação anual de sessões.</p>
                 </div>
 
-                <div class="bg-white p-8 rounded-xl border border-slate-200/90 shadow-sm hover:border-petrol transition-all">
-                    <i class="fas fa-house-medical text-3xl text-petrol mb-4"></i>
+                <div class="bg-white p-8 rounded-xl border border-slate-200/90 shadow-sm hover:border-emerald-700/40 hover:shadow-lg transition-all duration-300 group">
+                    <div class="w-14 h-14 rounded-xl bg-petrolTint text-petrol group-hover:bg-emerald-700 group-hover:text-white flex items-center justify-center mb-5 transition-all duration-300 group-hover:scale-105 shadow-sm">
+                        <i class="fas fa-house-medical text-2xl"></i>
+                    </div>
                     <h3 class="font-serif text-xl font-bold text-petrolDark mb-3">Home Care (Internação Domiciliar)</h3>
                     <p class="text-slate-600 text-sm leading-relaxed">Quando o médico indica cuidados domiciliares com enfermagem, fisioterapia e equipamentos, a recusa do plano sob alegação de "ausência contratual" pode ser revertida judicialmente.</p>
                 </div>
 
-                <div class="bg-white p-8 rounded-xl border border-slate-200/90 shadow-sm hover:border-petrol transition-all">
-                    <i class="fas fa-file-invoice-dollar text-3xl text-petrol mb-4"></i>
+                <div class="bg-white p-8 rounded-xl border border-slate-200/90 shadow-sm hover:border-amber-700/40 hover:shadow-lg transition-all duration-300 group">
+                    <div class="w-14 h-14 rounded-xl bg-petrolTint text-petrol group-hover:bg-amber-700 group-hover:text-white flex items-center justify-center mb-5 transition-all duration-300 group-hover:scale-105 shadow-sm">
+                        <i class="fas fa-file-invoice-dollar text-2xl"></i>
+                    </div>
                     <h3 class="font-serif text-xl font-bold text-petrolDark mb-3">Reajustes e Cancelamentos</h3>
                     <p class="text-slate-600 text-sm leading-relaxed">Defesa contra rescisão unilateral do contrato durante tratamento contínuo, reajustes abusivos por faixa etária ou sinistralidade e negativas de reembolso médico.</p>
                 </div>
 
-                <div class="bg-white p-8 rounded-xl border border-slate-200/90 shadow-sm hover:border-petrol transition-all">
-                    <i class="fas fa-user-md text-3xl text-petrol mb-4"></i>
+                <div class="bg-white p-8 rounded-xl border border-slate-200/90 shadow-sm hover:border-cyan-700/40 hover:shadow-lg transition-all duration-300 group">
+                    <div class="w-14 h-14 rounded-xl bg-petrolTint text-petrol group-hover:bg-cyan-700 group-hover:text-white flex items-center justify-center mb-5 transition-all duration-300 group-hover:scale-105 shadow-sm">
+                        <i class="fas fa-user-md text-2xl"></i>
+                    </div>
                     <h3 class="font-serif text-xl font-bold text-petrolDark mb-3">Erro Médico e Odontológico</h3>
                     <p class="text-slate-600 text-sm leading-relaxed">Análise técnica rigorosa e ações indenizatórias em casos de falha na prestação de serviço hospitalar, médico ou odontológico que causem danos ao paciente.</p>
                 </div>
@@ -326,7 +337,7 @@
         <div class="container mx-auto px-6 max-w-5xl">
             <div class="grid md:grid-cols-12 gap-10 items-center">
                 <div class="md:col-span-4 max-w-[260px] mx-auto">
-                    <img src="https://i.postimg.cc/d06HxB3C/333680.jpg" loading="lazy" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=400&h=533'" alt="Dr. Judson Clementino de Sousa" class="w-full aspect-[3/4] object-cover object-top rounded-xl shadow-lg border border-slate-200">
+                    <img src="333680.jpg" loading="lazy" alt="Dr. Judson Clementino de Sousa" class="w-full aspect-[3/4] object-cover object-top rounded-xl shadow-lg border border-slate-200">
                 </div>
                 <div class="md:col-span-8 space-y-4">
                     <span class="text-petrol font-semibold tracking-widest uppercase text-xs">Responsável Técnico</span>
@@ -335,6 +346,11 @@
                     <p class="text-slate-700 text-sm sm:text-base leading-relaxed text-justify">
                         Especialista em <strong>Direito Médico, Hospitalar, Odontológico e da Saúde</strong>, lidera a <strong>Judson Sousa Sociedade Individual de Advocacia</strong>, com sede física no Brooklin (São Paulo/SP) e atuação 100% digital em todo o Brasil. Ao longo de mais de duas décadas e mais de 2.000 casos atuados, nossa banca combina rigor técnico e atendimento humanizado para proteger pacientes em momentos decisivos.
                     </p>
+                    <div class="pt-2">
+                        <a href="index.html#atuacao" class="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-petrol hover:text-petrolDark underline underline-offset-4 transition-colors">
+                            Conhecer todas as áreas de atuação da banca <i class="fas fa-arrow-right text-[10px]"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
