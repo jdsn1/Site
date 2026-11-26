@@ -2,8 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://judsonsousa.com.br/</loc>
-    <lastmod>2026-11-18</lastmod>
-    <changefreq>monthly</changefreq>
+    <lastmod>2026-11-26</lastmod>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://judsonsousa.com.br/saude.html</loc>
+    <lastmod>2026-11-26</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://judsonsousa.com.br/imobiliario.html</loc>
+    <lastmod>2026-11-26</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://judsonsousa.com.br/consumidor.html</loc>
+    <lastmod>2026-11-26</lastmod>
+    <priority>0.9</priority>
   </url>
 </urlset>
