@@ -150,10 +150,45 @@
                 </a>
 
                 <!-- Menu Desktop -->
-                <nav class="hidden lg:flex items-center gap-6">
+                <nav class="hidden lg:flex items-center gap-7">
                     <a href="#inicio" class="text-sm font-medium text-slate-700 hover:text-petrol transition-colors">Início</a>
-                    <a href="#atuacao" class="text-sm font-medium text-slate-700 hover:text-petrol transition-colors">Áreas de Atuação</a>
-                    <a href="saude.html" class="text-sm font-semibold text-petrol bg-petrolTint/80 hover:bg-petrol hover:text-white px-3 py-1.5 rounded-md transition-colors">Liminares de Saúde</a>
+                    
+                    <!-- Dropdown de Especialidades (Páginas Dedicadas) -->
+                    <div class="relative group">
+                        <a href="#atuacao" class="text-sm font-semibold text-petrol hover:text-petrolDark transition-colors inline-flex items-center gap-1.5 py-1">
+                            Áreas de Atuação <i class="fas fa-chevron-down text-[10px] transition-transform duration-200 group-hover:rotate-180"></i>
+                        </a>
+                        <div class="absolute left-0 top-full pt-2 w-64 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                            <div class="bg-white rounded-xl shadow-xl border border-slate-200/90 py-2 overflow-hidden">
+                                <a href="saude.html" class="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-700 hover:bg-petrolTint/70 hover:text-petrolDark transition-colors">
+                                    <i class="fas fa-heartbeat text-rose-700 w-4 text-center"></i>
+                                    <div>
+                                        <span class="font-semibold block leading-tight">Direito da Saúde</span>
+                                        <span class="text-[11px] text-slate-500">Liminares, Planos e TEA</span>
+                                    </div>
+                                </a>
+                                <a href="consumidor.html" class="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-700 hover:bg-petrolTint/70 hover:text-petrolDark transition-colors">
+                                    <i class="fas fa-balance-scale-right text-amber-700 w-4 text-center"></i>
+                                    <div>
+                                        <span class="font-semibold block leading-tight">Defesa do Consumidor</span>
+                                        <span class="text-[11px] text-slate-500">Bancos, Fraudes e Contratos</span>
+                                    </div>
+                                </a>
+                                <a href="imobiliario.html" class="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-700 hover:bg-petrolTint/70 hover:text-petrolDark transition-colors">
+                                    <i class="fas fa-city text-slate-700 w-4 text-center"></i>
+                                    <div>
+                                        <span class="font-semibold block leading-tight">Direito Imobiliário</span>
+                                        <span class="text-[11px] text-slate-500">Distratos, Usucapião e Locações</span>
+                                    </div>
+                                </a>
+                                <div class="border-t border-slate-100 my-1"></div>
+                                <a href="#atuacao" class="block px-4 py-2 text-xs font-semibold text-petrol hover:bg-slate-50 transition-colors">
+                                    Ver todas as 8 áreas →
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
                     <a href="#sobre" class="text-sm font-medium text-slate-700 hover:text-petrol transition-colors">A Banca</a>
                     <a href="#como-funciona" class="text-sm font-medium text-slate-700 hover:text-petrol transition-colors">Como Funciona</a>
                     <a href="#faq" class="text-sm font-medium text-slate-700 hover:text-petrol transition-colors">Dúvidas</a>
@@ -173,12 +208,20 @@
             </div>
 
             <!-- Menu Mobile Retrátil -->
-            <div id="mobile-menu" class="hidden lg:hidden bg-[#F8FAFC] border-t border-slate-200 mt-3 px-6 pt-4 pb-5 space-y-3 shadow-lg">
+            <div id="mobile-menu" class="hidden lg:hidden bg-[#F8FAFC] border-t border-slate-200 mt-3 px-6 pt-4 pb-5 space-y-2 shadow-lg">
                 <a href="#inicio" onclick="closeMobileMenu()" class="block py-2 text-sm font-semibold text-slate-700 hover:text-petrol border-b border-slate-200/70">Início</a>
-                <a href="#atuacao" onclick="closeMobileMenu()" class="block py-2 text-sm font-semibold text-slate-700 hover:text-petrol border-b border-slate-200/70">Áreas de Atuação</a>
-                <a href="saude.html" onclick="closeMobileMenu()" class="block py-2 text-sm font-bold text-petrol hover:text-petrolDark border-b border-slate-200/70">
-                    <i class="fas fa-heartbeat mr-1.5"></i> Direito da Saúde e Liminares
-                </a>
+                <a href="#atuacao" onclick="closeMobileMenu()" class="block py-2 text-sm font-semibold text-slate-700 hover:text-petrol">Áreas de Atuação</a>
+                <div class="pl-4 pb-2 space-y-1.5 border-b border-slate-200/70">
+                    <a href="saude.html" onclick="closeMobileMenu()" class="block py-1 text-xs font-bold text-petrol hover:text-petrolDark">
+                        <i class="fas fa-heartbeat text-rose-700 mr-1.5 w-4"></i> Direito da Saúde e Liminares
+                    </a>
+                    <a href="consumidor.html" onclick="closeMobileMenu()" class="block py-1 text-xs font-bold text-petrol hover:text-petrolDark">
+                        <i class="fas fa-balance-scale-right text-amber-700 mr-1.5 w-4"></i> Defesa do Consumidor
+                    </a>
+                    <a href="imobiliario.html" onclick="closeMobileMenu()" class="block py-1 text-xs font-bold text-petrol hover:text-petrolDark">
+                        <i class="fas fa-city text-slate-700 mr-1.5 w-4"></i> Direito Imobiliário
+                    </a>
+                </div>
                 <a href="#sobre" onclick="closeMobileMenu()" class="block py-2 text-sm font-semibold text-slate-700 hover:text-petrol border-b border-slate-200/70">A Banca</a>
                 <a href="#como-funciona" onclick="closeMobileMenu()" class="block py-2 text-sm font-semibold text-slate-700 hover:text-petrol border-b border-slate-200/70">Como Funciona</a>
                 <a href="#faq" onclick="closeMobileMenu()" class="block py-2 text-sm font-semibold text-slate-700 hover:text-petrol border-b border-slate-200/70">Dúvidas Frequentes</a>
@@ -282,110 +325,155 @@
         </div>
     </section>
 
-    <!-- Áreas de Atuação -->
+    <!-- Áreas de Atuação (Carrossel em Fileira Única com Cards Maiores) -->
     <section id="atuacao" class="py-24 bg-surface overflow-hidden scroll-mt-24">
         <div class="container mx-auto px-6">
-            <div class="text-center mb-16 space-y-3 fade-in-up">
-                <h3 class="text-petrol font-semibold tracking-widest uppercase text-xs">Atuação Multidisciplinar</h3>
-                <h2 class="font-serif text-3xl lg:text-5xl font-bold text-petrolDark">Áreas de Especialidade</h2>
-                <div class="w-16 h-1 bg-petrol mx-auto rounded"></div>
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6 fade-in-up">
+                <div class="space-y-3 text-center md:text-left">
+                    <h3 class="text-petrol font-semibold tracking-widest uppercase text-xs">Atuação Multidisciplinar</h3>
+                    <h2 class="font-serif text-3xl lg:text-5xl font-bold text-petrolDark">Áreas de Especialidade</h2>
+                    <div class="w-16 h-1 bg-petrol mx-auto md:mx-0 rounded"></div>
+                </div>
+
+                <!-- Controles do Carrossel (Desktop e Tablet) -->
+                <div class="flex items-center justify-center md:justify-end gap-3">
+                    <span class="text-xs text-slate-500 hidden sm:inline mr-2">Arraste ou use as setas</span>
+                    <button type="button" onclick="moverCarrossel(-1)" aria-label="Área anterior" class="w-11 h-11 rounded-full bg-white border border-slate-300 text-petrolDark hover:bg-petrol hover:text-white hover:border-petrol transition-all flex items-center justify-center shadow-sm">
+                        <i class="fas fa-chevron-left text-sm"></i>
+                    </button>
+                    <button type="button" onclick="moverCarrossel(1)" aria-label="Próxima área" class="w-11 h-11 rounded-full bg-white border border-slate-300 text-petrolDark hover:bg-petrol hover:text-white hover:border-petrol transition-all flex items-center justify-center shadow-sm">
+                        <i class="fas fa-chevron-right text-sm"></i>
+                    </button>
+                </div>
             </div>
             
-            <div class="flex overflow-x-auto snap-x snap-mandatory hide-scrollbar gap-6 pb-4 md:grid md:grid-cols-2 lg:grid-cols-4 md:overflow-visible md:gap-7 md:pb-0 fade-in-up delay-100">
-                <!-- Card 1: Direito Médico e da Saúde -->
-                <div class="min-w-[85vw] sm:min-w-[300px] md:min-w-0 snap-center bg-white p-8 rounded-xl border border-slate-200/90 shadow-sm hover:border-rose-700/40 hover:shadow-lg transition-all duration-300 group flex flex-col justify-between">
+            <!-- Fileira Única Arrastável -->
+            <div id="areas-carousel" class="flex overflow-x-auto snap-x snap-mandatory hide-scrollbar gap-7 pb-6 cursor-grab active:cursor-grabbing select-none fade-in-up delay-100">
+                
+                <!-- 1. Direito Médico e da Saúde -->
+                <div class="w-[85vw] sm:w-[350px] lg:w-[380px] min-h-[320px] flex-shrink-0 snap-start bg-white p-9 rounded-2xl border border-slate-200/90 shadow-sm hover:border-rose-700/40 hover:shadow-xl transition-all duration-300 group flex flex-col justify-between">
                     <div>
-                        <div class="w-14 h-14 rounded-xl bg-petrolTint text-petrol group-hover:bg-rose-700 group-hover:text-white flex items-center justify-center mb-6 transition-all duration-300 group-hover:scale-105 shadow-sm">
-                            <i class="fas fa-heartbeat text-2xl"></i>
+                        <div class="w-16 h-16 rounded-2xl bg-petrolTint text-petrol group-hover:bg-rose-700 group-hover:text-white flex items-center justify-center mb-7 transition-all duration-300 group-hover:scale-105 shadow-sm">
+                            <i class="fas fa-heartbeat text-3xl"></i>
                         </div>
-                        <h3 class="font-serif text-xl font-bold mb-3 text-petrolDark">Direito Médico e da Saúde</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed">Defesa dos direitos de pacientes, responsabilidade civil por erros médicos e fornecimento de medicamentos pelo SUS.</p>
+                        <h3 class="font-serif text-2xl font-bold mb-3 text-petrolDark">Direito Médico e da Saúde</h3>
+                        <p class="text-slate-600 text-sm sm:text-base leading-relaxed">Defesa dos direitos de pacientes, responsabilidade civil por erros médicos e fornecimento de medicamentos pelo SUS.</p>
                     </div>
-                    <a href="saude.html" class="mt-5 inline-flex items-center gap-1.5 text-xs font-semibold text-petrol group-hover:text-rose-700 transition-colors">
-                        Ver página de Saúde <i class="fas fa-arrow-right text-[10px] transition-transform group-hover:translate-x-1"></i>
+                    <a href="saude.html" class="mt-7 pt-4 border-t border-slate-100 inline-flex items-center justify-between text-sm font-semibold text-petrol group-hover:text-rose-700 transition-colors">
+                        <span>Ver página de Saúde</span>
+                        <i class="fas fa-arrow-right text-xs transition-transform group-hover:translate-x-1"></i>
                     </a>
                 </div>
 
-                <!-- Card 2: Planos de Saúde e Hospitais -->
-                <div class="min-w-[85vw] sm:min-w-[300px] md:min-w-0 snap-center bg-white p-8 rounded-xl border border-slate-200/90 shadow-sm hover:border-teal-700/40 hover:shadow-lg transition-all duration-300 group flex flex-col justify-between">
+                <!-- 2. Planos de Saúde e Hospitais -->
+                <div class="w-[85vw] sm:w-[350px] lg:w-[380px] min-h-[320px] flex-shrink-0 snap-start bg-white p-9 rounded-2xl border border-slate-200/90 shadow-sm hover:border-teal-700/40 hover:shadow-xl transition-all duration-300 group flex flex-col justify-between">
                     <div>
-                        <div class="w-14 h-14 rounded-xl bg-petrolTint text-petrol group-hover:bg-teal-700 group-hover:text-white flex items-center justify-center mb-6 transition-all duration-300 group-hover:scale-105 shadow-sm">
-                            <i class="fas fa-hospital text-2xl"></i>
+                        <div class="w-16 h-16 rounded-2xl bg-petrolTint text-petrol group-hover:bg-teal-700 group-hover:text-white flex items-center justify-center mb-7 transition-all duration-300 group-hover:scale-105 shadow-sm">
+                            <i class="fas fa-hospital text-3xl"></i>
                         </div>
-                        <h3 class="font-serif text-xl font-bold mb-3 text-petrolDark">Planos de Saúde e Hospitais</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed">Liminar contra negativas de cirurgias, próteses, home care, tratamentos oncológicos e revisão de reajustes abusivos.</p>
+                        <h3 class="font-serif text-2xl font-bold mb-3 text-petrolDark">Planos de Saúde e Hospitais</h3>
+                        <p class="text-slate-600 text-sm sm:text-base leading-relaxed">Liminar contra negativas de cirurgias, próteses, home care, tratamentos oncológicos e revisão de reajustes abusivos.</p>
                     </div>
-                    <a href="saude.html" class="mt-5 inline-flex items-center gap-1.5 text-xs font-semibold text-petrol group-hover:text-teal-700 transition-colors">
-                        Ver Liminares de Saúde <i class="fas fa-arrow-right text-[10px] transition-transform group-hover:translate-x-1"></i>
+                    <a href="saude.html" class="mt-7 pt-4 border-t border-slate-100 inline-flex items-center justify-between text-sm font-semibold text-petrol group-hover:text-teal-700 transition-colors">
+                        <span>Ver Liminares de Saúde</span>
+                        <i class="fas fa-arrow-right text-xs transition-transform group-hover:translate-x-1"></i>
                     </a>
                 </div>
 
-                <!-- Card 3: Direito do Autista (TEA) -->
-                <div class="min-w-[85vw] sm:min-w-[300px] md:min-w-0 snap-center bg-white p-8 rounded-xl border border-slate-200/90 shadow-sm hover:border-sky-700/40 hover:shadow-lg transition-all duration-300 group flex flex-col justify-between">
+                <!-- 3. Civil e Consumidor -->
+                <div class="w-[85vw] sm:w-[350px] lg:w-[380px] min-h-[320px] flex-shrink-0 snap-start bg-white p-9 rounded-2xl border border-slate-200/90 shadow-sm hover:border-amber-700/40 hover:shadow-xl transition-all duration-300 group flex flex-col justify-between">
                     <div>
-                        <div class="w-14 h-14 rounded-xl bg-petrolTint text-petrol group-hover:bg-sky-700 group-hover:text-white flex items-center justify-center mb-6 transition-all duration-300 group-hover:scale-105 shadow-sm">
-                            <i class="fas fa-puzzle-piece text-2xl"></i>
+                        <div class="w-16 h-16 rounded-2xl bg-petrolTint text-petrol group-hover:bg-amber-700 group-hover:text-white flex items-center justify-center mb-7 transition-all duration-300 group-hover:scale-105 shadow-sm">
+                            <i class="fas fa-balance-scale-right text-3xl"></i>
                         </div>
-                        <h3 class="font-serif text-xl font-bold mb-3 text-petrolDark">Direito do Autista (TEA)</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed">Garantia judicial de terapias multidisciplinares (método ABA, fonoaudiologia, TO) sem limitação abusiva de sessões.</p>
+                        <h3 class="font-serif text-2xl font-bold mb-3 text-petrolDark">Civil e Consumidor</h3>
+                        <p class="text-slate-600 text-sm sm:text-base leading-relaxed">Contencioso cível estratégico, execução de contratos, indenizações por danos morais e materiais e práticas abusivas.</p>
                     </div>
-                    <a href="saude.html" class="mt-5 inline-flex items-center gap-1.5 text-xs font-semibold text-petrol group-hover:text-sky-700 transition-colors">
-                        Saiba mais sobre TEA <i class="fas fa-arrow-right text-[10px] transition-transform group-hover:translate-x-1"></i>
+                    <a href="consumidor.html" class="mt-7 pt-4 border-t border-slate-100 inline-flex items-center justify-between text-sm font-semibold text-petrol group-hover:text-amber-700 transition-colors">
+                        <span>Ver página do Consumidor</span>
+                        <i class="fas fa-arrow-right text-xs transition-transform group-hover:translate-x-1"></i>
                     </a>
                 </div>
 
-                <!-- Card 4: Direito Odontológico -->
-                <div class="min-w-[85vw] sm:min-w-[300px] md:min-w-0 snap-center bg-white p-8 rounded-xl border border-slate-200/90 shadow-sm hover:border-cyan-700/40 hover:shadow-lg transition-all duration-300 group flex flex-col justify-between">
+                <!-- 4. Direito Imobiliário -->
+                <div class="w-[85vw] sm:w-[350px] lg:w-[380px] min-h-[320px] flex-shrink-0 snap-start bg-white p-9 rounded-2xl border border-slate-200/90 shadow-sm hover:border-slate-700/40 hover:shadow-xl transition-all duration-300 group flex flex-col justify-between">
                     <div>
-                        <div class="w-14 h-14 rounded-xl bg-petrolTint text-petrol group-hover:bg-cyan-700 group-hover:text-white flex items-center justify-center mb-6 transition-all duration-300 group-hover:scale-105 shadow-sm">
-                            <i class="fas fa-tooth text-2xl"></i>
+                        <div class="w-16 h-16 rounded-2xl bg-petrolTint text-petrol group-hover:bg-slate-700 group-hover:text-white flex items-center justify-center mb-7 transition-all duration-300 group-hover:scale-105 shadow-sm">
+                            <i class="fas fa-city text-3xl"></i>
                         </div>
-                        <h3 class="font-serif text-xl font-bold mb-3 text-petrolDark">Direito Odontológico</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed">Ações reparatórias e análise técnica envolvendo falhas em implantes, ortodontia, próteses e harmonização facial.</p>
+                        <h3 class="font-serif text-2xl font-bold mb-3 text-petrolDark">Direito Imobiliário</h3>
+                        <p class="text-slate-600 text-sm sm:text-base leading-relaxed">Segurança jurídica em compra e venda, distratos imobiliários, ações possessórias, locações, usucapião e regularizações.</p>
                     </div>
-                    <a href="saude.html" class="mt-5 inline-flex items-center gap-1.5 text-xs font-semibold text-petrol group-hover:text-cyan-700 transition-colors">
-                        Ver área de Saúde <i class="fas fa-arrow-right text-[10px] transition-transform group-hover:translate-x-1"></i>
+                    <a href="imobiliario.html" class="mt-7 pt-4 border-t border-slate-100 inline-flex items-center justify-between text-sm font-semibold text-petrol group-hover:text-slate-700 transition-colors">
+                        <span>Ver página Imobiliária</span>
+                        <i class="fas fa-arrow-right text-xs transition-transform group-hover:translate-x-1"></i>
                     </a>
                 </div>
 
-                <!-- Card 5: Direito Imobiliário -->
-                <div class="min-w-[85vw] sm:min-w-[300px] md:min-w-0 snap-center bg-white p-8 rounded-xl border border-slate-200/90 shadow-sm hover:border-slate-700/40 hover:shadow-lg transition-all duration-300 group">
-                    <div class="w-14 h-14 rounded-xl bg-petrolTint text-petrol group-hover:bg-slate-700 group-hover:text-white flex items-center justify-center mb-6 transition-all duration-300 group-hover:scale-105 shadow-sm">
-                        <i class="fas fa-city text-2xl"></i>
+                <!-- 5. Direito do Autista (TEA) -->
+                <div class="w-[85vw] sm:w-[350px] lg:w-[380px] min-h-[320px] flex-shrink-0 snap-start bg-white p-9 rounded-2xl border border-slate-200/90 shadow-sm hover:border-sky-700/40 hover:shadow-xl transition-all duration-300 group flex flex-col justify-between">
+                    <div>
+                        <div class="w-16 h-16 rounded-2xl bg-petrolTint text-petrol group-hover:bg-sky-700 group-hover:text-white flex items-center justify-center mb-7 transition-all duration-300 group-hover:scale-105 shadow-sm">
+                            <i class="fas fa-puzzle-piece text-3xl"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold mb-3 text-petrolDark">Direito do Autista (TEA)</h3>
+                        <p class="text-slate-600 text-sm sm:text-base leading-relaxed">Garantia judicial de terapias multidisciplinares (método ABA, fonoaudiologia, TO) sem limitação abusiva de sessões.</p>
                     </div>
-                    <h3 class="font-serif text-xl font-bold mb-3 text-petrolDark">Direito Imobiliário</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">Segurança jurídica em compra e venda, distratos imobiliários, ações possessórias, locações, usucapião e regularizações.</p>
+                    <a href="saude.html" class="mt-7 pt-4 border-t border-slate-100 inline-flex items-center justify-between text-sm font-semibold text-petrol group-hover:text-sky-700 transition-colors">
+                        <span>Saiba mais sobre TEA</span>
+                        <i class="fas fa-arrow-right text-xs transition-transform group-hover:translate-x-1"></i>
+                    </a>
                 </div>
 
-                <!-- Card 6: Civil e Consumidor -->
-                <div class="min-w-[85vw] sm:min-w-[300px] md:min-w-0 snap-center bg-white p-8 rounded-xl border border-slate-200/90 shadow-sm hover:border-amber-700/40 hover:shadow-lg transition-all duration-300 group">
-                    <div class="w-14 h-14 rounded-xl bg-petrolTint text-petrol group-hover:bg-amber-700 group-hover:text-white flex items-center justify-center mb-6 transition-all duration-300 group-hover:scale-105 shadow-sm">
-                        <i class="fas fa-balance-scale-right text-2xl"></i>
+                <!-- 6. Direito Odontológico -->
+                <div class="w-[85vw] sm:w-[350px] lg:w-[380px] min-h-[320px] flex-shrink-0 snap-start bg-white p-9 rounded-2xl border border-slate-200/90 shadow-sm hover:border-cyan-700/40 hover:shadow-xl transition-all duration-300 group flex flex-col justify-between">
+                    <div>
+                        <div class="w-16 h-16 rounded-2xl bg-petrolTint text-petrol group-hover:bg-cyan-700 group-hover:text-white flex items-center justify-center mb-7 transition-all duration-300 group-hover:scale-105 shadow-sm">
+                            <i class="fas fa-tooth text-3xl"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold mb-3 text-petrolDark">Direito Odontológico</h3>
+                        <p class="text-slate-600 text-sm sm:text-base leading-relaxed">Ações reparatórias e análise técnica envolvendo falhas em implantes, ortodontia, próteses e harmonização facial.</p>
                     </div>
-                    <h3 class="font-serif text-xl font-bold mb-3 text-petrolDark">Civil e Consumidor</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">Contencioso cível estratégico, execução de contratos, indenizações por danos morais e materiais e práticas abusivas.</p>
+                    <a href="saude.html" class="mt-7 pt-4 border-t border-slate-100 inline-flex items-center justify-between text-sm font-semibold text-petrol group-hover:text-cyan-700 transition-colors">
+                        <span>Ver área de Saúde</span>
+                        <i class="fas fa-arrow-right text-xs transition-transform group-hover:translate-x-1"></i>
+                    </a>
                 </div>
 
-                <!-- Card 7: Família e Sucessões -->
-                <div class="min-w-[85vw] sm:min-w-[300px] md:min-w-0 snap-center bg-white p-8 rounded-xl border border-slate-200/90 shadow-sm hover:border-indigo-700/40 hover:shadow-lg transition-all duration-300 group">
-                    <div class="w-14 h-14 rounded-xl bg-petrolTint text-petrol group-hover:bg-indigo-700 group-hover:text-white flex items-center justify-center mb-6 transition-all duration-300 group-hover:scale-105 shadow-sm">
-                        <i class="fas fa-users text-2xl"></i>
+                <!-- 7. Família e Sucessões -->
+                <div class="w-[85vw] sm:w-[350px] lg:w-[380px] min-h-[320px] flex-shrink-0 snap-start bg-white p-9 rounded-2xl border border-slate-200/90 shadow-sm hover:border-indigo-700/40 hover:shadow-xl transition-all duration-300 group flex flex-col justify-between">
+                    <div>
+                        <div class="w-16 h-16 rounded-2xl bg-petrolTint text-petrol group-hover:bg-indigo-700 group-hover:text-white flex items-center justify-center mb-7 transition-all duration-300 group-hover:scale-105 shadow-sm">
+                            <i class="fas fa-users text-3xl"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold mb-3 text-petrolDark">Família e Sucessões</h3>
+                        <p class="text-slate-600 text-sm sm:text-base leading-relaxed">Condução ética e sigilosa em inventários judiciais e extrajudiciais, partilha de bens, divórcios, guarda e alimentos.</p>
                     </div>
-                    <h3 class="font-serif text-xl font-bold mb-3 text-petrolDark">Família e Sucessões</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">Condução ética e sigilosa em inventários judiciais e extrajudiciais, partilha de bens, divórcios, guarda e alimentos.</p>
+                    <a href="#contato" class="mt-7 pt-4 border-t border-slate-100 inline-flex items-center justify-between text-sm font-semibold text-petrol group-hover:text-indigo-700 transition-colors">
+                        <span>Solicitar orientação</span>
+                        <i class="fas fa-arrow-right text-xs transition-transform group-hover:translate-x-1"></i>
+                    </a>
                 </div>
 
-                <!-- Card 8: Direito Trabalhista -->
-                <div class="min-w-[85vw] sm:min-w-[300px] md:min-w-0 snap-center bg-white p-8 rounded-xl border border-slate-200/90 shadow-sm hover:border-emerald-700/40 hover:shadow-lg transition-all duration-300 group">
-                    <div class="w-14 h-14 rounded-xl bg-petrolTint text-petrol group-hover:bg-emerald-700 group-hover:text-white flex items-center justify-center mb-6 transition-all duration-300 group-hover:scale-105 shadow-sm">
-                        <i class="fas fa-briefcase text-2xl"></i>
+                <!-- 8. Direito Trabalhista -->
+                <div class="w-[85vw] sm:w-[350px] lg:w-[380px] min-h-[320px] flex-shrink-0 snap-start bg-white p-9 rounded-2xl border border-slate-200/90 shadow-sm hover:border-emerald-700/40 hover:shadow-xl transition-all duration-300 group flex flex-col justify-between">
+                    <div>
+                        <div class="w-16 h-16 rounded-2xl bg-petrolTint text-petrol group-hover:bg-emerald-700 group-hover:text-white flex items-center justify-center mb-7 transition-all duration-300 group-hover:scale-105 shadow-sm">
+                            <i class="fas fa-briefcase text-3xl"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold mb-3 text-petrolDark">Direito Trabalhista</h3>
+                        <p class="text-slate-600 text-sm sm:text-base leading-relaxed">Atuação técnica em reclamações trabalhistas, rescisões indiretas, reconhecimento de vínculo e verbas rescisórias.</p>
                     </div>
-                    <h3 class="font-serif text-xl font-bold mb-3 text-petrolDark">Direito Trabalhista</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">Atuação técnica em reclamações trabalhistas, rescisões indiretas, reconhecimento de vínculo e verbas rescisórias.</p>
+                    <a href="#contato" class="mt-7 pt-4 border-t border-slate-100 inline-flex items-center justify-between text-sm font-semibold text-petrol group-hover:text-emerald-700 transition-colors">
+                        <span>Solicitar orientação</span>
+                        <i class="fas fa-arrow-right text-xs transition-transform group-hover:translate-x-1"></i>
+                    </a>
                 </div>
+
             </div>
-            <div class="flex justify-center mt-6 md:hidden text-slate-500 text-xs items-center gap-2">
-                <i class="fas fa-arrows-alt-h"></i> Arraste para o lado para ver todas as áreas
+
+            <div class="flex justify-center mt-2 text-slate-500 text-xs items-center gap-2">
+                <i class="fas fa-arrows-alt-h text-petrol"></i> Arraste para o lado ou clique nas setas para explorar todas as áreas
             </div>
         </div>
     </section>
@@ -569,8 +657,8 @@
                                     <option value="Direito da Saúde / Liminar">Direito da Saúde / Liminar</option>
                                     <option value="Direito Médico / Odontológico">Direito Médico / Odontológico</option>
                                     <option value="Direito do Autista (TEA)">Direito do Autista (TEA)</option>
-                                    <option value="Direito Imobiliário / Civil">Direito Imobiliário / Civil</option>
                                     <option value="Defesa do Consumidor">Defesa do Consumidor</option>
+                                    <option value="Direito Imobiliário / Civil">Direito Imobiliário / Civil</option>
                                     <option value="Família e Sucessões">Família e Sucessões</option>
                                     <option value="Direito Trabalhista">Direito Trabalhista</option>
                                 </select>
@@ -676,7 +764,7 @@
     <!-- Footer Institucional -->
     <footer class="bg-petrolDeep text-slate-300 pt-16 pb-8 border-t border-petrol">
         <div class="container mx-auto px-6">
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-12 mb-12">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
                 <div>
                     <div class="flex items-center gap-3.5 mb-6">
                         <img src="logolosangojsescritorio.png" alt="Brasão Judson Sousa" class="h-12 w-12 object-contain bg-surface rounded-lg p-1">
@@ -691,11 +779,19 @@
                 </div>
                 
                 <div>
+                    <h3 class="font-serif text-lg font-bold mb-6 text-white">Páginas Especiais</h3>
+                    <ul class="space-y-3 text-slate-300 text-sm font-light">
+                        <li><a href="saude.html" class="hover:text-white transition-colors font-medium text-white">Direito da Saúde e Liminares</a></li>
+                        <li><a href="consumidor.html" class="hover:text-white transition-colors font-medium text-white">Defesa do Consumidor</a></li>
+                        <li><a href="imobiliario.html" class="hover:text-white transition-colors font-medium text-white">Direito Imobiliário</a></li>
+                    </ul>
+                </div>
+
+                <div>
                     <h3 class="font-serif text-lg font-bold mb-6 text-white">Navegação Rápida</h3>
                     <ul class="space-y-3 text-slate-300 text-sm font-light">
                         <li><a href="#inicio" class="hover:text-white transition-colors">Início</a></li>
                         <li><a href="#atuacao" class="hover:text-white transition-colors">Áreas de Especialidade</a></li>
-                        <li><a href="saude.html" class="hover:text-white transition-colors font-medium text-white">Direito da Saúde e Liminares</a></li>
                         <li><a href="#sobre" class="hover:text-white transition-colors">A Banca Jurídica</a></li>
                         <li><a href="#como-funciona" class="hover:text-white transition-colors">Como Funciona</a></li>
                         <li><a href="#faq" class="hover:text-white transition-colors">Dúvidas Frequentes</a></li>
@@ -828,6 +924,60 @@
                 });
             }
         }
+
+        // Navegação por botões no carrossel de áreas
+        function moverCarrossel(direcao) {
+            const carousel = document.getElementById('areas-carousel');
+            if (!carousel) return;
+            const deslocamento = Math.min(410, carousel.clientWidth * 0.85);
+            carousel.scrollBy({ left: direcao * deslocamento, behavior: 'smooth' });
+        }
+
+        // Arraste suave com mouse no desktop (preservando cliques em links)
+        (function iniciarArrasteCarrossel() {
+            const carousel = document.getElementById('areas-carousel');
+            if (!carousel) return;
+
+            let isDown = false;
+            let startX = 0;
+            let scrollLeft = 0;
+            let arrastou = false;
+
+            carousel.addEventListener('mousedown', (e) => {
+                isDown = true;
+                arrastou = false;
+                startX = e.pageX - carousel.offsetLeft;
+                scrollLeft = carousel.scrollLeft;
+                carousel.classList.remove('snap-x', 'snap-mandatory');
+            });
+
+            const finalizarArraste = () => {
+                if (!isDown) return;
+                isDown = false;
+                carousel.classList.add('snap-x', 'snap-mandatory');
+            };
+
+            carousel.addEventListener('mouseup', finalizarArraste);
+            carousel.addEventListener('mouseleave', finalizarArraste);
+
+            carousel.addEventListener('mousemove', (e) => {
+                if (!isDown) return;
+                const x = e.pageX - carousel.offsetLeft;
+                const walk = x - startX;
+                if (Math.abs(walk) > 6) {
+                    arrastou = true;
+                    e.preventDefault();
+                    carousel.scrollLeft = scrollLeft - walk * 1.2;
+                }
+            });
+
+            carousel.addEventListener('click', (e) => {
+                if (arrastou) {
+                    e.preventDefault();
+                    arrastou = false;
+                }
+            }, true);
+        })();
 
         function toggleMobileMenu() {
             const menu = document.getElementById('mobile-menu');
